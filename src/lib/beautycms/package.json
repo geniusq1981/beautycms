@@ -1,0 +1,64 @@
+{
+  "_from": "buttercms@^1.1.1",
+  "_id": "buttercms@1.1.1",
+  "_inBundle": false,
+  "_integrity": "sha512-Td5d7drciokW2gtlbOEbmlpaYmu3kNT80VKyN7JyrKHPyTJGT1l1w5hkS1ATKm3ulGv4lzXEYZd2jqetBrJkiQ==",
+  "_location": "/buttercms",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "buttercms@^1.1.1",
+    "name": "buttercms",
+    "escapedName": "buttercms",
+    "rawSpec": "^1.1.1",
+    "saveSpec": null,
+    "fetchSpec": "^1.1.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/buttercms/-/buttercms-1.1.1.tgz",
+  "_shasum": "fcd502df47e9157e4f6d6fb18b167d0ba056103e",
+  "_spec": "buttercms@^1.1.1",
+  "_where": "F:\\Project\\vue-CMS\\buttercms-project",
+  "author": {
+    "name": "ButterCMS",
+    "email": "support@buttercms.com"
+  },
+  "bugs": {
+    "url": "https://github.com/buttercms/buttercms-js/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "axios": "0.9.1"
+  },
+  "deprecated": false,
+  "description": "ButterCMS API Client",
+  "devDependencies": {
+    "uglify-js": "^2.8.22",
+    "webpack": "^2.5.0"
+  },
+  "engines": {
+    "node": ">=0.10.32"
+  },
+  "homepage": "https://github.com/buttercms/buttercms-js",
+  "keywords": [
+    "buttercms",
+    "butter",
+    "cms",
+    "api"
+  ],
+  "license": "MIT",
+  "main": "lib/butter.js",
+  "name": "buttercms",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/buttercms/buttercms-js.git"
+  },
+  "scripts": {
+    "build": "webpack && uglifyjs ./dist/butter.js -c -m -o ./dist/butter.min.js"
+  },
+  "version": "1.1.1"
+}
