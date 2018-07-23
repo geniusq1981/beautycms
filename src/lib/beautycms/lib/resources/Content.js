@@ -1,16 +1,16 @@
-'use strict';
+'use strict'
 
-function Content(conn) {
-  this._conn = conn;
+function Content (conn) {
+  this._conn = conn
 }
 
 Content.prototype = {
-  list: function(options) {
+  list: function (options) {
     return this._conn.get('categories/', options)
   },
-  retrieve: function(slug, options) {
-    return this._conn.get('categories/'+slug+'/', options)
+  retrieve: function (slug, options) {
+    return this._conn.get('categories/' + slug + '/', options)
   }
 }
 
-module.exports = Content;
+module.exports = Content

@@ -24,38 +24,38 @@
 <script>
 import { butter } from '@/lib/buttercms'
 export default {
-    name: 'rss-atom-sitemap',
-    data() {
-      return {
-        rss: '',
-        atom: '',
-        sitemap: ''
-      }
-    },
-    methods: {
-      getRss() {
-        butter.feed.retrieve('rss').then((res) => {
-          console.log(res.data.data)
-          this.rss = res.data.data
-        })
-      },
-      getAtom() {
-        butter.feed.retrieve('atom').then((res) => {
-          console.log(res.data.data)
-          this.atom = res.data.data
-        })
-      },
-      getSitemap() {
-        butter.feed.retrieve('sitemap').then((res) => {
-          console.log(res.data.data)
-          this.sitemap = res.data.data
-        })
-      },
-    },
-    created() {
-      this.getRss()
-      this.getAtom()
-      this.getSitemap()
+  name: 'rss-atom-sitemap',
+  data () {
+    return {
+      rss: '',
+      atom: '',
+      sitemap: ''
     }
+  },
+  methods: {
+    getRss () {
+      butter.feed.retrieve('rss').then((res) => {
+        console.log(res.data.data)
+        this.rss = res.data.data
+      })
+    },
+    getAtom () {
+      butter.feed.retrieve('atom').then((res) => {
+        console.log(res.data.data)
+        this.atom = res.data.data
+      })
+    },
+    getSitemap () {
+      butter.feed.retrieve('sitemap').then((res) => {
+        console.log(res.data.data)
+        this.sitemap = res.data.data
+      })
+    }
+  },
+  created () {
+    this.getRss()
+    this.getAtom()
+    this.getSitemap()
   }
+}
 </script>

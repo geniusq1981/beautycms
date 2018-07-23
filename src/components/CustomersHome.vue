@@ -30,34 +30,34 @@
 </template>
 
 <script>
-// import ButterCMS from 
+// import ButterCMS from
 import { butter } from '@/lib/buttercms'
 export default {
-    name: 'customers-home',
-    data() {
-      return {
-        page_title: 'Customers',
-        // Create array to hold the pages from ButterCMS API
-        pages: []
-      }
-    },
-    methods: {
-      // Get List of Customer Pages
-      getPages() {
-        butter.page.list('customer_case_study')
-          .then((res) => {
-            // console.log(res.data.data) // Check the results in the console
-            this.pages = res.data.data
-          })
-      }
-    },
-    created() {
-      // Fire on page creation
-      this.getPages()
+  name: 'customers-home',
+  data () {
+    return {
+      page_title: 'Customers',
+      // Create array to hold the pages from ButterCMS API
+      pages: []
     }
+  },
+  methods: {
+    // Get List of Customer Pages
+    getPages () {
+      butter.page.list('customer_case_study')
+        .then((res) => {
+          // console.log(res.data.data) // Check the results in the console
+          this.pages = res.data.data
+        })
+    }
+  },
+  created () {
+    // Fire on page creation
+    this.getPages()
   }
+}
 </script>
 
 <style>
-  
+
 </style>

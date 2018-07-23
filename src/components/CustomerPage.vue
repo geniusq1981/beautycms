@@ -13,35 +13,35 @@
 </template>
 
 <script>
-  import { butter } from '@/lib/buttercms'
-  export default {
-    name: 'customer-page',
-    data() {
-      return {
-        slug: this.$route.params.slug,
-        page: {
-          slug: '',
-          fields: {}
-        }
+import { butter } from '@/lib/buttercms'
+export default {
+  name: 'customer-page',
+  data () {
+    return {
+      slug: this.$route.params.slug,
+      page: {
+        slug: '',
+        fields: {}
       }
-    },
-    methods: {
-      getPage() {
-        butter.page.retrieve('customer_case_study', this.slug)
-          .then((res) => {
-            console.log(res.data.data)
-            this.page = res.data.data
-          }).catch((res) => {
-            console.log(res)
-          })
-      }
-    },
-    created() {
-      this.getPage()
     }
+  },
+  methods: {
+    getPage () {
+      butter.page.retrieve('customer_case_study', this.slug)
+        .then((res) => {
+          console.log(res.data.data)
+          this.page = res.data.data
+        }).catch((res) => {
+          console.log(res)
+        })
+    }
+  },
+  created () {
+    this.getPage()
   }
+}
 </script>
 
 <style>
-  
+
 </style>

@@ -47,6 +47,6 @@ export default new Router({
       path: '/rss',
       name: 'rss',
       component: RssAtomSitemap
-    },
+    }
   ]
 })

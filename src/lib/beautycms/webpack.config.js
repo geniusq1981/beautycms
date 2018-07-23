@@ -1,4 +1,4 @@
-var path = require('path');
+var path = require('path')
 
 module.exports = {
   entry: './lib/butter.js',
@@ -7,4 +7,4 @@ module.exports = {
     library: 'Butter',
     path: path.resolve(__dirname, 'dist')
   }
-};
+}
