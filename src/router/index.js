@@ -11,7 +11,7 @@ import RssAtomSitemap from '@/components/RssAtomSitemap'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: window.location.pathName,
   routes: [
     {
