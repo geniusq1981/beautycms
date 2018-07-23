@@ -8,16 +8,16 @@
         </router-link>
         </div>
         <div class="navbar-end">
-          <router-link class="navbar-item" to="/customers">
+          <router-link class="navbar-item" to="customers">
             Customer
           </router-link>
-          <router-link class="navbar-item" to="/faq">
+          <router-link class="navbar-item" to="faq">
            FAQ
           </router-link>
-          <router-link class="navbar-item" to="/blog">
+          <router-link class="navbar-item" to="blog">
            Blog Posts
           </router-link>
-          <router-link class="navbar-item" to="/rss">
+          <router-link class="navbar-item" to="rss">
            RSS, Atom &amp; Sitemap
           </router-link>
         </div>

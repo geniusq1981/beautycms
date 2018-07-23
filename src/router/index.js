@@ -12,6 +12,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
+  base: window.location.pathName,
   routes: [
     {
       path: '/',
@@ -19,7 +20,7 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/customers/',
+      path: '/customers',
       name: 'customers-home',
       component: CustomersHome
     },
@@ -34,7 +35,7 @@ export default new Router({
       component: FAQ
     },
     {
-      path: '/blog/',
+      path: '/blog',
       name: 'blog-home',
       component: BlogHome
     },
