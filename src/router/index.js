@@ -7,6 +7,8 @@ import FAQ from '@/components/FAQ'
 import BlogHome from '@/components/BlogHome'
 import BlogPost from '@/components/BlogPost'
 import RssAtomSitemap from '@/components/RssAtomSitemap'
+import AboutPage from '@/components/About'
+import ArchivePage from '@/components/Archive'
 
 Vue.use(Router)
 
@@ -25,7 +27,7 @@ export default new Router({
       component: CustomersHome
     },
     {
-      path: '/customers/:slug',
+      path: '/customers/:slug/:index',
       name: 'customer-page',
       component: CustomerPage
     },
@@ -48,6 +50,16 @@ export default new Router({
       path: '/rss',
       name: 'rss',
       component: RssAtomSitemap
+    },
+     {
+      path: '/about',
+      name: 'about',
+      component: AboutPage
+    },
+    {
+      path: '/archive',
+      name: 'archive',
+      component: ArchivePage
     }
   ]
 })

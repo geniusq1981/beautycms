@@ -39,7 +39,7 @@ Beauty.prototype = {
     return {
       get: function (url, params) {
         var conn = axios.create({
-          baseURL: 'http://127.0.0.1:8080/data',
+          baseURL: './static/data',
           timeout: timeout,
           headers: {'X-Butter-Client': 'JS/' + config.version}
         })
