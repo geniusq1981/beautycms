@@ -6,7 +6,6 @@ import router from './router'
 import '../static/css/main.css'  
 
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -33,7 +32,21 @@ new Vue({
     {title:'所有文章',url:'/archive',des:'archive'},
     {title:'标签',url:'/tags',des:'tags'},
     {title:'关于我',url:'/about',des:'about'}
-    ]
+    ],
+    pagesetting:{
+      tagscount:30,
+      postcount:1
+    },
+    pagestatus:{
+      blogTotalPage:"",
+      tagsTotalPage:"",
+      currentblogpage:1,
+      currenttagspage:"",
+      previous_blogpage:{"name":"","path":""},
+      next_blogpage:{"name":"","path":""},
+      previous_tagpage:{"name":"","path":""},
+      next_tagpage:{"name":"","path":""}
+    }
   },
   method: {
   	updatedata () {

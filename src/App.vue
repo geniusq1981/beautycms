@@ -89,6 +89,7 @@
  <div class="content-wrapper">
         <div class="content-wrapper__inner">
     <router-view/>
+    
     </div>
     </div>
     <footer class="footer">
@@ -104,6 +105,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'App',
   data () {

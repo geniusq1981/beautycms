@@ -9,6 +9,7 @@ import BlogPost from '@/components/BlogPost'
 import RssAtomSitemap from '@/components/RssAtomSitemap'
 import AboutPage from '@/components/About'
 import ArchivePage from '@/components/Archive'
+import TagsPage from '@/components/Tags'
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ export default new Router({
       path: '/archive',
       name: 'archive',
       component: ArchivePage
+    },
+    {
+      path: '/tags',
+      name: 'tags',
+      component: TagsPage
     }
   ]
 })

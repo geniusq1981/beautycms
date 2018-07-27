@@ -5,11 +5,11 @@
         <h1 class="is-size-1">{{ page_title }}</h1>
         <hr>
         <div>
-          SDU的菜鸡一枚，喜欢尝试一些新技术。
+          Web 领域老鸟一枚，喜欢尝试一些新技术。
 <p>
-平时喜欢整理个人博客，逛逛技术论坛，看看自己比较感兴趣的东西，最近想通过参加到掘金的翻译计划中，一方面锻炼一下自己的英语应用水平，一方面为开源世界贡献一份力量吧(其实我挺想用赚来的积分兑换那个GitHub手办的，感觉这样很有意义)。
+平时喜欢看看个人博客，逛逛技术论坛，看看电影，听听小歌，看看自己比较感兴趣的东西。
 <p>
-了解一些 Android 基本概念和 Kotlin 的简单用法。
+一方面锻炼一下自己的英语应用水平，一方面为开源世界贡献一份力量吧(其实我挺想用赚来的积分兑换那个GitHub手办的，感觉这样很有意义)。了解一些 Android 基本概念和 Kotlin 的简单用法。
 
 <p>
 
@@ -17,7 +17,7 @@
 
 <p>
 
-这个博客模板是我找的GitHub上觉得比较中意的一个，作者是leopard,如果想用这个模板可以去作者的项目那里下载并star，感谢作者对这个模板的分享,作者对大家使用他的模板感到高兴。
+这个博客模板是我找的GitHub上觉得比较中意的一个，作者是 leopard,如果想用这个模板可以去作者的项目那里下载并star，感谢作者对这个模板的分享,作者对大家使用他的模板感到高兴。
 
 <p>
 
@@ -41,23 +41,22 @@
 import { butter } from '@/lib/buttercms'
 export default {
   name: '关于我',
-  data () {
+  data() {
     return {
       page_title: 'About',
       faq_items: []
     }
   },
   methods: {
-    getFaqs () {
-     
+    getFaqs() {
+
     }
   },
-  created () {
+  created() {
     this.getFaqs()
   }
 }
 </script>
 
 <style>
-
 </style>

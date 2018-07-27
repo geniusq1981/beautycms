@@ -23,7 +23,6 @@
     </div>
     <h1 class="post-title">{{ post.data.title }}</h1>
   </header>
-
   <section class="post">
     <div class="content" v-html="html"></div>
   </section>

@@ -1,6 +1,5 @@
-<template>
-  
-        <article class="post-container post-container--single" itemscope="" itemtype="http://schema.org/BlogPosting">
+<template> 
+    <article class="post-container post-container--single" itemscope="" itemtype="http://schema.org/BlogPosting">
          <div class="page card">
         <header class="post-header">
     <div class="post-meta">
@@ -10,9 +9,9 @@
     <h1 class="post-title">{{ page_title }}</h1>
         <hr></h1>
   </header>       
-         <div v-for="posts in postbyyear">
+         <div v-for="(posts, index) in postbyyear">
          <div class="hat_title">
-        <h3>{{posts.year}}</h3>
+        <h3>{{index}}</h3>
       </div>
       <div class="post_list">
       <ul>  
@@ -34,14 +33,14 @@
 import { butter } from '@/lib/buttercms'
 export default {
   name: 'ArchivePage',
-  data () {
+  data() {
     return {
       page_title: '所有文章',
       postbyyear: {}
-          }
+    }
   },
   methods: {
-   getPosts () {
+    getPosts() {
       butter.post.list({
         page: 1,
         page_size: 10
@@ -51,34 +50,33 @@ export default {
         this.processByYear(this.posts)
       })
     },
-    processByYear (ins) {
-        var that = this
-        let p
-        ins.forEach((post,index)=>{
-            console.log(post)
-            console.log(index)
-            console.log(that)
-            console.log(post.date)
-            let year = new Date(post.date).getFullYear()
-            console.log(year)
-            if(this.postbyyear.hasOwnProperty(year)){
-              let data =this.postbyyear[year]
-              data.push(post)
-              this.$set(this.postbyyear,year,data)
-            }else{
-              let data = []
-              data.push(post)
-              this.$set(this.postbyyear,year,data)
-            }
-        })
+    processByYear(ins) {
+      var that = this
+      let p
+      ins.forEach((post, index) => {
+        console.log(post)
+        console.log(index)
+        console.log(that)
+        console.log(post.date)
+        let year = new Date(post.date).getFullYear()
+        console.log(year)
+        if (this.postbyyear.hasOwnProperty(year)) {
+          let data = this.postbyyear[year]
+          data.push(post)
+          this.$set(this.postbyyear, year, data)
+        } else {
+          let data = []
+          data.push(post)
+          this.$set(this.postbyyear, year, data)
+        }
+      })
     }
   },
-  created () {
+  created() {
     this.getPosts()
   }
 }
 </script>
 
 <style>
-
 </style>
