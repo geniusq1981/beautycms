@@ -89,25 +89,21 @@
  <div class="content-wrapper">
         <div class="content-wrapper__inner">
     <router-view/>
-    
+     
+    <foot></foot>
     </div>
     </div>
-    <footer class="footer">
-      <div class="container">
-        <div class="content has-text-centered">
-          <p>
-            <strong>Tutorial</strong> by <a href="https://bryanrankin.com">Bryan Rankin</a>.
-          </p>
-        </div>
-      </div>
-    </footer>
+   
   </div>
 </template>
 
 <script>
-
+import foot from "@/components/foot"
 export default {
   name: 'App',
+  components: {
+      foot
+  },
   data () {
     return{
       site:this.$root.site,
@@ -117,6 +113,20 @@ export default {
   },
   watch:{
     $route (to,from) {
+    }
+  },
+  computed:{
+    weburl () {
+      return "http://weibo.com/"+this.$root.site.social.weibo
+    },
+    webname () {
+      return this.$root.site.social.weibo+"的微博"
+    },
+    githuburl () {
+      return "https://github.com/"+this.$root.site.social.github
+    },
+    githubname () {
+      return this.$root.site.social.weibo+"的 Github"
     }
   }
 }

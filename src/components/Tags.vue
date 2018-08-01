@@ -1,5 +1,4 @@
 <template>  
-<div>
         <article class="post-container post-container--single" itemscope="" itemtype="http://schema.org/BlogPosting">
          <div class="page card">
         <header class="post-header">
@@ -21,7 +20,7 @@
         {{ post.date }}
       </span>
        &raquo; 
-      <router-link :to="{path:'/blog/' + post.title}">{{ post.title }}</router-link>
+      <router-link :to="{path:'/blog/' + post.title}">{{ post.slug }}</router-link>
     </li>
       </ul>
       </div>
@@ -29,8 +28,6 @@
       </div>
   </article> 
 
-<Pagination v-bind:cur_page="cur_Page" v-bind:total_pages="total_Page"></Pagination>
-</div>
 </template>
 
 <script>
@@ -41,10 +38,8 @@ export default {
   data () {
     return {
       page_title: '标签分类',
-      postbytags: {},
-      cur_Page:1,
-      total_Page:10
-          }
+      postbytags: {}
+  }
   },
   methods: {
    getPosts () {

@@ -17,6 +17,9 @@ export default new Router({
   mode: 'hash',
   base: window.location.pathName,
   routes: [
+    { path: '*',
+      component: HelloWorld 
+    },
     {
       path: '/',
       name: 'HelloWorld',

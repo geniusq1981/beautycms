@@ -1,12 +1,11 @@
 <template>
  <div>
  <div class="main-post-list">
-
   <ol class="post-list">
     <li v-for="post in cur_posts">
       <h2 class="post-list__post-title post-title">
       <router-link :to="{path:'/blog/' + post.title, query:{index:post.index}}" class="button">
-          {{ post.title }} >
+          {{ post.slug }} >
         </router-link>
         </h2>
       <p class="excerpt">{{ post.des}}</p>
@@ -32,7 +31,7 @@
     </li>
   </ol>
 </div>
-<Pagination v-bind:cur_page="cur_Page" v-bind:total_pages="total_Page" v-bind:pre_page="pre_page" v-bind:next_page="next_page" v-bind:next_page_path="next_page_path" v-bind:pre_page_path="pre_page_path"></Pagination>
+<Pagination v-bind:pg="pagination"></Pagination>
 </div>
 </template>
 
@@ -46,16 +45,18 @@ export default {
   },
   data() {
     return {
+      pagination:{
+        cur_page:this.$route.query.index||1,
+        total_page:10,
+        next_page:2,
+        pre_page:0,
+        pre_page_path:"",
+        next_page_path:""
+      },
       page_title: 'Blog',
       cur_posts:[],
       posts: [],
-      categories: [],
-      cur_Page:1,
-      total_Page:10,
-      pre_page:0,
-      next_page:2,
-      pre_page_path:"",
-      next_page_path:""
+      categories: []
     }
   },
   methods: {
@@ -66,12 +67,7 @@ export default {
       }).then((res) => {
         console.log(res.data)
         this.posts = res.data.data
-        this.cur_Page=this.$route.query.page||1
-        this.total_Page =this.posts.length/5
-        this.pre_page = this.cur_Page-1 >0 ?this.cur_Page-1:""
-        this.next_page = this.cur_Page+1 >this.total_Page? this.cur_Page+1:""
-        this.cur_posts = this.posts.slice((this.cur_Page-1)*5,5*this.cur_Page)
-        console.log(this.cur_posts)
+        this.getPogination()
       })
     },
     getCategories() {
@@ -89,12 +85,29 @@ export default {
           console.log('Posts with specific category:')
           console.log(res)
         })
+    },
+    getPogination (){
+        this.pagination.cur_page=this.$route.query.index||1
+        console.log(this.pagination.cur_page)
+        this.pagination.total_page =Math.ceil(this.posts.length/10)
+        this.pagination.pre_page = this.pagination.cur_page-1 >0 ?this.pagination.cur_page-1:""
+        this.pagination.next_page = this.pagination.cur_page+1 <=this.pagination.total_page? this.pagination.cur_page+1:""
+        this.cur_posts = this.posts.slice((this.pagination.cur_page-1)*10,10*this.pagination.cur_page)
     }
   },
+  computed:{
+  },
+  watch:{
+   '$route' (to, from) {
+       this.getPogination()
+      }
+  },
   created() {
+  },
+   mounted() {
     this.getPosts()
-    this.getCategories()
-    this.getPostsByCategory()
+    //this.getCategories()
+    //this.getPostsByCategory()
   }
 }
 </script>

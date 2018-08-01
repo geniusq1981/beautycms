@@ -1,38 +1,51 @@
 <template>
   <div id="About">
     <div class="section">
-      <div class="container">
         <h1 class="is-size-1">{{ page_title }}</h1>
         <hr>
         <div>
-          Web 领域老鸟一枚，喜欢尝试一些新技术。
-<p>
-平时喜欢看看个人博客，逛逛技术论坛，看看电影，听听小歌，看看自己比较感兴趣的东西。
-<p>
-一方面锻炼一下自己的英语应用水平，一方面为开源世界贡献一份力量吧(其实我挺想用赚来的积分兑换那个GitHub手办的，感觉这样很有意义)。了解一些 Android 基本概念和 Kotlin 的简单用法。
-
-<p>
-
-<h3> 我们的博客 </h3>
-
-<p>
-
-这个博客模板是我找的GitHub上觉得比较中意的一个，作者是 leopard,如果想用这个模板可以去作者的项目那里下载并star，感谢作者对这个模板的分享,作者对大家使用他的模板感到高兴。
-
-<p>
-
-如果你想搭建一个跟我一样的博客，可以看我的<a href="/2016/10/jekyll_tutorials1/">Jekyll 搭建个人博客 </a>教程
-
-博客源码在 <a target="_blank" href='https://github.com/leopardpan/leopardpan.github.io/'>Github</a> 上，你的 Star 是作者更新的动力，谢谢~
-
-<p>
-
-<p>
-
-<p>
+        <p>
+        一个喜欢瞎鼓捣的技术人员，一直希望深入钻研技术，无奈还是学术不精，甚为惭愧。
+        <p>
+        平时喜欢看看个人博客，逛逛技术论坛，看看电影，听听小歌，看看自己比较感兴趣的东西。
+        <p>
+        Web 领域也算是一名老鸟，但是一直感觉自身知之甚少，终日惶恐。
+        <hr>
+        <hr>
+        <p>
+        偶然发现掘金网站，其中有个掘金翻译计划，追随者众，遂也混入其中。
+        <p>
+        检验自己英语水平的同时，为开源世界贡献些力量，也接触些年轻的事物。
+        <p>
+        也希望在这个过程中，把自己这些年的感悟好好思考下，为了未来继续前行
+        <hr>
+        <hr>
+        <h3> 我们的博客 </h3>
+        <p>
+        原本只是想用 Vue 写一个博客，但是发现 Vuejs 官方推荐的 buttercms,
+        <p>
+        是基于 serverless api（而且要付费），想着弄一个博客后台，但使用独立的服务器又倍感浪费。
+        <hr>
+        <hr>
+        <p>
+        来自掘金计划的 DatePro 的博客给了我启发，原作者是 leopard，原本使用 Jekyll 搭建
+        <p>
+        由于自己不是一个 Ruby 的追随者，没有对应的环境，所以改用 Vue 山寨了这个。
+        <hr>
+        <p>
+        全部使用静态页面和资源，可以放置在 Github Page 上进行展示。
+        <p>
+        改写的非常粗糙，暂时只有简单的浏览博客的功能，离完整的 CMS 还相去甚远
+        <hr>
+        <hr>
+        <p>
+        可以通过我的 <a target="_blank" href='https://github.com/geniusq1981/beautycms/'>Github</a> 下载源代码，测试使用。
+        有问题和想法，可以在 github 上提给我。
+        <p>
+        如果喜欢，请点赞，你的 Star 是作者更新的动力，谢谢~
+        <p>
           <hr>
         </div>
-      </div>
     </div>
   </div>
 </template>
@@ -43,7 +56,7 @@ export default {
   name: '关于我',
   data() {
     return {
-      page_title: 'About',
+      page_title: '关于我',
       faq_items: []
     }
   },

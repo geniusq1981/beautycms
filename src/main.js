@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import 'font-awesome/css/font-awesome.min.css'
 import '../static/css/main.css'  
 
 Vue.config.productionTip = false
@@ -22,9 +23,9 @@ new Vue({
     	avatarDesc:"Web Tech Lover",
     	url:"",
 		social:{
-   			weibo: "18554323665",
+   			weibo: "3873821673",
     		github: "geniusq1981",
-   			mail: "sdudatebro@gmail.com"
+   			mail: "geniusq1981@hotmail.com"
 		},
 		cover_color:true
     },
@@ -58,19 +59,20 @@ new Vue({
   },
   created () {
   	console.log("create~")
+    console.log(this.$route.path)
+    this.isHomePage = this.$route.path == '/' ? false : true
   },
   watch: {
   	//console.log("watch")
   	'$route' (to, from) {
-  		console.log(to)
-  		console.log(from)
-    const toDepth = to.path.split('/').length
-    const fromDepth = from.path.split('/').length
-    this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-    console.log(this.$route)
-    console.log(this)
-    this.isHomePage = this.$route.path == '/' ? false : true
-
+  	  console.log(to)
+  	  console.log(from)
+      const toDepth = to.path.split('/').length
+      const fromDepth = from.path.split('/').length
+      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+      console.log(this.$route)
+      console.log(this)
+      this.isHomePage = this.$route.path == '/' ? false : true
   }
   },
   computed: {

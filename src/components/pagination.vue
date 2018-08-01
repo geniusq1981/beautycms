@@ -3,9 +3,9 @@
    <nav class="pagination" role="navigation">
 
 	<!-- 百度搜索 -->
-        <router-link v-if="pre_page" class="newer-posts pagination__newer btn btn-small btn-tertiary" :to="pre_page_path">&larr; 最近</router-link>
-        <span class="pagination__page-number">{{ cur_page }} / {{ total_pages }}</span>
-        <router-link v-if="next_page" class="older-posts pagination__older btn btn-small btn-tertiary" :to="next_page_path">更早 &rarr;</router-link>
+        <router-link v-if="pg.pre_page" class="newer-posts pagination__newer btn btn-small btn-tertiary" :to="pg.pre_page_path">&larr; 最近</router-link>
+        <span class="pagination__page-number">{{ pg.cur_page }} / {{ pg.total_page }}</span>
+        <router-link v-if="pg.next_page" class="older-posts pagination__older btn btn-small btn-tertiary" :to="{path:'',query:{index:pg.next_page}}">更早 &rarr;</router-link>
 	</nav>
   </div>
 </template>
@@ -20,10 +20,10 @@ export default {
       
       }    
   },
-  props:['cur_page','total_pages','pre_page','next_page','pre_page_path','next_page_path'],
+  props:['pg'],
   methods: {
     getPaginator() {
-    	console.log(this.paginator)
+    	 console.log(this)
     },
     loabdcs () {
    /*document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'))
@@ -33,6 +33,20 @@ export default {
    var s = document.getElementsByTagName('script')[0]
    s.parentNode.insertBefore(bdcs, s)*/
     }
+  },
+  watch:{
+    '$props':function(){
+    	console.log(this.pg)
+    },
+  	'pre_page':function(){
+  		console.log(this.pg.pre_page)
+  	},
+  	'cur_page':function(){
+  		console.log(this.pg.cur_page)
+  	},
+  	'next_page':function(){
+  		console.log(this.pg.next_page)
+  	}
   },
   created() {
     this.getPaginator()

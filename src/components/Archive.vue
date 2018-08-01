@@ -20,7 +20,7 @@
         {{ post.date }}
       </span>
        &raquo; 
-      <router-link :to="{path:'/blog/' + post.title}">{{ post.title }}</router-link>
+      <router-link :to="{path:'/blog/' + post.title}">{{ post.slug }}</router-link>
     </li>
       </ul>
       </div>

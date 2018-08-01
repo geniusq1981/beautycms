@@ -3,14 +3,14 @@
     <div class="container center">
       <div class="has-text-centered">
         <router-link v-if="post.data.previous_post" :to="{path:'/blog/' + post.data.previous_post.title, query:{index:post.meta.index-1}}" class="button">
-         {{ post.data.previous_post.title }}
+         {{ post.data.previous_post.slug }}
         </router-link>
         <router-link v-if="post.data.next_post" :to="{path:'/blog/' + post.data.next_post.title, query:{index:post.meta.index+1}}" class="button">
-          {{ post.data.next_post.title }} >
+          {{ post.data.next_post.slug }} >
         </router-link>
       </div>
       <hr>
-      <h1 class="is-size-2">{{ post.data.title }}</h1>-->
+      <h1 class="is-size-2">{{ post.data.slug }}</h1>-->
       <!--<h4>{{ post.data.author.first_name }} {{ post.data.author.last_name }}</h4>-->
       <!--<div class="content" v-html="html"></div>
     </div>
@@ -18,10 +18,10 @@
   <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <div class="post-meta">
-      <time :datetime="post.data.date" itemprop="datePublished" class="post-meta__date date">{{post.data.date }}</time>
+      <time :datetime="post.data.date" itemprop="datePublished" class="post-meta__date date">{{post.data.date}}</time>
       <span class="post-meta__tags tags"></span>
     </div>
-    <h1 class="post-title">{{ post.data.title }}</h1>
+    <h1 class="post-title">{{ post.data.slug }}</h1>
   </header>
   <section class="post">
     <div class="content" v-html="html"></div>
@@ -72,6 +72,10 @@ export default {
       this.content = "nihao"
       console.log(this.post)
       return marked(this.content)
+    },
+    formatDate (strTime) {
+       var date = new Date(strTime)
+       return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
     }
   },
   watch: {
