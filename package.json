@@ -1,6 +1,6 @@
 {
   "name": "buttercms-test",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "buttercms demo",
   "author": "geniusq1981 <geniusq1981@hotmail.com>",
   "private": true,
@@ -13,6 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "lintfix": "eslint --fix  --ext  .js,.vue src test/unit/specs test/e2e/specs",
     "build": "npm run md2json && node build/build.js",
+    "buildadmin":"node build/build-admin.js",
     "md2json": "node build/mdfiles2json.js"
   },
   "dependencies": {

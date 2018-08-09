@@ -28,12 +28,12 @@
         <hr>
         <hr>
         <p>
-        来自掘金计划的 DatePro 的博客给了我启发，原作者是 leopard，原本使用 Jekyll 搭建
+        参考了 Hexo 和 Jekyll，虽然都很好，但是还是不想放弃初衷。
         <p>
-        由于自己不是一个 Ruby 的追随者，没有对应的环境，所以改用 Vue 山寨了这个。
+        参考 Github 上 leopardpan 的博客模板（Jekyll), 撸了这个。
         <hr>
         <p>
-        全部使用静态页面和资源，可以放置在 Github Page 上进行展示。
+        全部使用静态数据进行页面加载，可以放置在 Github Page 上进行展示。
         <p>
         改写的非常粗糙，暂时只有简单的浏览博客的功能，离完整的 CMS 还相去甚远
         <hr>

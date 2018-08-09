@@ -13,7 +13,7 @@ const webpackConfig = require('./webpack.prod.admin.conf')
 
 const spinner = ora('building for admin production...')
 spinner.start()
-console.log(config.buildadmin)
+
 rm(path.join(config.buildadmin.assetsRoot, config.buildadmin.assetsSubDirectory), err => {
   if (err) throw err
   webpack(webpackConfig, (err, stats) => {

@@ -25,7 +25,7 @@ const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
 
-const spinner = ora('building for production...')
+const spinner = ora('transfer .md files to json...')
 
 //获取当前目录绝对路径，这里resolve()不传入参数
 var filePath = path.resolve('','static/data/Post');

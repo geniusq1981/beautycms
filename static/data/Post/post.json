@@ -1,13 +1,21 @@
 {
-    "count": 14,
+    "count": 18,
     "data": [
         {
             "title": "lets-settle-this-part-two.md",
-            "date": "Mon, 30 Jul 2018 00:34:50 GMT",
-            "slug": "Let’s settle ‘this’ — Part Two",
+            "date": "Wed, 08 Aug 2018 07:49:36 GMT",
+            "slug": "让我们一起解决“this”难题 — 第二部分",
             "category": "",
             "tag": "",
-            "des": "Hey! Welcome to part two of Let’s settle ‘this’ where we are trying to demystify one of JavaScript’s least understood aspect — the ‘this’ keyword. If you haven’t checked out part one yet you might wan……"
+            "des": "嗨！欢迎来到让我们一起解决“this”难题的第二部分，我们试图揭开 JavaScript 中最难让人理解的一部分内容 - “this”关键字的神秘面纱。如果您还没有读过 第一部分，你需要先把它读一下。在第一部分中，我们通过 15 个示例介绍了默认绑定规则和隐式绑定规则。我们了解了函数内部的“this”如何随着函数调用方式的不同而发生改变。最后，我们也介绍了箭头函数以及它是如何进行词法绑定。我希望你……"
+        },
+        {
+            "title": "lets-settle-this-part-one.md",
+            "date": "Wed, 08 Aug 2018 07:49:36 GMT",
+            "slug": "让我们一起解决“this”难题 — 第一部分",
+            "category": "",
+            "tag": "",
+            "des": "难道我们就不能彻底搞清楚“this”吗？在某种程度上，几乎所有的 JavaScript 开发人员都曾经思考过“this”这个事情。对我来说，每当“this”出来捣乱的时候，我就会想方设法地去解决掉它，但过后就把它忘了，我想你应该也曾遇到过类似的场景。但是今天，让我们弄明白它，让我们一次性地彻底解决“this”的问题，一劳永逸。前几天，我在图书馆遇到了一个意想不到的事情。这本书的整个第二章都是关于“……"
         },
         {
             "title": "how-to-rewrite-your-sql-queries-in-pandas-and-more.md",
@@ -18,12 +26,36 @@
             "des": "15 年前，软件开发人员只需掌握很少的一些技能，他或她就有机会获得 95% 的工作机会。这些技能包括：当您需要快速浏览一些数据并得出初步结论时，SQL 是一种常用的工具，这些结论可能会产生一个分析报告或者是编写一个应用程序。这被称之为 探索性分析。现如今，数据会以各种各样的形式出现，不再仅仅是“关系型数据库”的同义词。您的数据可能会是 CSV 文件、纯文本、Parquet、HDF5，或者其他什么格……"
         },
         {
-            "title": "lets-settle-this-part-one.md",
-            "date": "Mon, 30 Jul 2018 00:34:49 GMT",
-            "slug": "Let’s settle ‘this’ — Part One",
+            "title": "how-i-automated-my-job-with-node-js.md",
+            "date": "Tue, 24 Jul 2018 01:34:38 GMT",
+            "slug": "我如何使用 Node.js 来实现工作自动化",
             "category": "",
             "tag": "",
-            "des": "Can’t we all relate to this? At some point ‘this’ has been a thing to think about for almost all JavaScript developers. For me, whenever ‘this’ started to rear its ugly head I somehow managed to make ……"
+            "des": "您知道在工作中有很多必须完成的繁琐任务：更新配置文件,复制和粘贴文件，更新 Jira 任务。一段时间之后,这些工作的消耗时间会逐渐累积。2016 年，我在一家网络游戏公司工作时，情况就是如此。为游戏构建可配置的模板对于游戏开发来说是一项非常有意义的工作，但我大约 70% 的时间都花在了复制这些游戏模板和部署这些重新封装的实现上。公司 reskin 的定义是指使用相同的游戏机制，屏幕和元素的定位，但……"
+        },
+        {
+            "title": "make-3d-flip-animation-in-flutter.md",
+            "date": "Tue, 24 Jul 2018 01:34:38 GMT",
+            "slug": "使用 Flutter 制作 3D 翻转动画",
+            "category": "",
+            "tag": "",
+            "des": "从 UI 挑战中学习 Flutter作为我的第一篇文章的续篇，我将开始新的挑战。这个将比前一个（微光闪烁）复杂一点。我称之为翻转动画：这已经足够值得挑战了，不是吗？是的，我们将制作一个看起来有些类 3D 效果的动画。乍一看，有个很简单的想法：我们有一堆面板，每个面板被分成两半，每一半可以围绕 X 轴旋转并显示下一个面板。如何用代码实现呢？我把它分为了两个小任务：那么 Flutter 如何帮助我们呢……"
+        },
+        {
+            "title": "making-a-todo-app-with-flutter.md",
+            "date": "Tue, 24 Jul 2018 01:34:38 GMT",
+            "slug": "用 Flutter 写一个待办事项应用",
+            "category": "",
+            "tag": "",
+            "des": "Flutter 是 Google 对 React Native 的回应，它允许开发人员为 Android 和 iOS 创建原生应用。与用 JSX 编写的 React Native 不同，Flutter 应用程序是用 Google 的 Dart 语言编写的.Flutter 仍处于技术测试阶段，但它的工具非常稳定，并提供了流畅的开发体验。在这篇文章中，我将讲解如何使用 Flutter 创建一个简单的待……"
+        },
+        {
+            "title": "make-shimmer-effect-in-flutter.md",
+            "date": "Tue, 24 Jul 2018 01:34:38 GMT",
+            "slug": "在 Flutter 中实现微光闪烁效果",
+            "category": "",
+            "tag": "",
+            "des": "通过挑战 UI 制作来学习 Flutter我是一个狂热的移动开发者，Android 平台和 iOS 平台开发都有涉及。过去我不相信任何跨平台的开发框架（Ionic，Xamarin，ReactNative），但现在我要讲一下我遇到跨平台开发框架 Flutter 之后的故事。作为一名原生应用开发人员，我深深感到 UI 定制开发是多么痛苦，即使是使用跨平台开发框架去进行开发，这种痛苦也不能得到缓解，有时……"
         },
         {
             "title": "a-simple-guide-to-understanding-javascript-es6-generators.md",
@@ -32,14 +64,6 @@
             "category": "",
             "tag": "",
             "des": "如果你在过去两到五年中一直在研究 JavaScript，那么肯定看过关于 Generator 和 Iterator 的文章。虽然 Generator 和 Iterator 本质上是相关的，但 Generator 似乎比 Iterator 更令人难以理解。Iterator 由 Iterable 对象（如 map，数组和字符串等）实现，我们能够使用 next() 迭代它们。Iterator 在 Gen……"
-        },
-        {
-            "title": "how-i-automated-my-job-with-node-js.md",
-            "date": "Tue, 24 Jul 2018 01:34:38 GMT",
-            "slug": "我如何使用 Node.js 来实现工作自动化",
-            "category": "",
-            "tag": "",
-            "des": "您知道在工作中有很多必须完成的繁琐任务：更新配置文件,复制和粘贴文件，更新 Jira 任务。一段时间之后,这些工作的消耗时间会逐渐累积。2016 年，我在一家网络游戏公司工作时，情况就是如此。为游戏构建可配置的模板对于游戏开发来说是一项非常有意义的工作，但我大约 70% 的时间都花在了复制这些游戏模板和部署这些重新封装的实现上。公司 reskin 的定义是指使用相同的游戏机制，屏幕和元素的定位，但……"
         },
         {
             "title": "energy-sector-now-on-blockchain-based-cryptocurrency.md",
@@ -56,14 +80,6 @@
             "category": "",
             "tag": "",
             "des": "IT 产业是世界最大的电力消费领域之一。它的电力消耗约为每年 500 太瓦时，相当于整个欧洲和日本的发电量之和，也接近于全球发电量的 100%。在这个领域，仅云计算就每年消耗 416 太瓦时，几乎与整个航空业的碳排放量相当，并且增长迅速：大约每四年云计算的电力消耗将翻一番。到 2020 年，这个数字将增加 400 太瓦时，可能超过中国的年电力消费，到 2030 年，可能会赶超全球第一大电力消费国：……"
-        },
-        {
-            "title": "vuejs-or-react-which-you-would-chose-and-why.md",
-            "date": "Mon, 02 Jul 2018 00:43:26 GMT",
-            "slug": "Vue.js 还是 React？你会选择哪一个？为什么？",
-            "category": "",
-            "tag": "",
-            "des": "两者之间的区别很有意思，但不仅仅局限于 JSX 与 Templates 或者丰富的 API 与少量的 API 的区别。React 和 Vue 两者之间的选择可能导致截然不同的结果，这一点在你一开始选择的时候可能并没有意识到。当选择一个框架的时候，一个重要的问题是「我希望项目的复杂性在哪个部分」。React 和 Vue 可以完成很多相同的东西，但它们的实现方式截然不同。从一些反馈来看，我很好奇是否有……"
         },
         {
             "title": "introduction-to-accessibility-for-android-apps-and-games.md",
@@ -90,6 +106,14 @@
             "des": "以下内容为本系列文章的第二部分，如果你还没看第一部分，请移步或许你并不需要 Rust 和 WASM 来提升 JS 的执行效率 — 第一部分。我尝试过三种不同的方法对 Base64 VLQ 段进行解码。第一个是 decodeCached，它与 source-map 使用的默认实现方式完全相同 — 我已经在上面列出了：第二个是 decodeNoCaching。它实际上就是没有缓存的 decodeCac……"
         },
         {
+            "title": "vuejs-or-react-which-you-would-chose-and-why.md",
+            "date": "Mon, 02 Jul 2018 00:43:26 GMT",
+            "slug": "Vue.js 还是 React？你会选择哪一个？为什么？",
+            "category": "",
+            "tag": "",
+            "des": "两者之间的区别很有意思，但不仅仅局限于 JSX 与 Templates 或者丰富的 API 与少量的 API 的区别。React 和 Vue 两者之间的选择可能导致截然不同的结果，这一点在你一开始选择的时候可能并没有意识到。当选择一个框架的时候，一个重要的问题是「我希望项目的复杂性在哪个部分」。React 和 Vue 可以完成很多相同的东西，但它们的实现方式截然不同。从一些反馈来看，我很好奇是否有……"
+        },
+        {
             "title": "a-real-world-comparison-of-front-end-frameworks-with-benchmarks-2018-update.md",
             "date": "Fri, 15 Jun 2018 06:13:16 GMT",
             "slug": "前端开发框架的实战对比（2018 年更新）",
@@ -112,6 +136,14 @@
             "category": "",
             "tag": "",
             "des": "The woods are lovely, dark and deep. But I have promises to keep, and miles to go before I sleep. — Robert FrostPromise 是 JavaScript ES6 中最令人兴奋的新增功能之一。为了支持异步编程，JavaScript 使用了回调（callbacks），以及一些其他的技术。然而……"
+        },
+        {
+            "title": "architecting-single-page-applications.md",
+            "date": "Wed, 30 May 2018 05:15:35 GMT",
+            "slug": "关于 SPA，你需要掌握的 4 层",
+            "category": "",
+            "tag": "",
+            "des": "每个成功的项目都需要一个清晰的架构，这对于所有团队成员都是心照不宣的。试想一下，作为团队的新人。技术负责人给你介绍了在项目进程中提出的新应用程序的架构。然后告诉你需求：我们的应用程序将显示一系列文章。用户能够创建、删除和收藏文章。然后他说，去做吧！我选择 FaceBook 开源的构建工具 Create React App，使用 Flow 来进行类型检查。简单起见，先忽略样式。作为先决条件，让我们讨……"
         }
     ]
 }
