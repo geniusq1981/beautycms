@@ -1,10 +1,37 @@
 import request from '@/utils/request'
 
-export function getList(params) {
+export const getList = (params) => {
   console.log('getList')
   return request({
     url: '/post/list',
     method: 'get',
+    params
+  })
+}
+
+export const removeList = (params) => {
+  console.log('removeList')
+  return request({
+    url: '/post/removelist',
+    method: 'post',
+    data: params
+  })
+}
+
+export const addList = (params) => {
+  console.log('addList')
+  return request({
+    url: '/post/addlist',
+    method: 'post',
+    params
+  })
+}
+
+export const editList = (params) => {
+  console.log('editList')
+  return request({
+    url: '/post/editlist',
+    method: 'post',
     params
   })
 }

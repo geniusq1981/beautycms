@@ -66,19 +66,51 @@ router.get('/post/listpage', function(req, res, next) {
   res.send('respond with a post/listpage');
 });
 
-router.get('/post/remove', function(req, res, next) {
-	var arg = URL.parse(req.url, true).query; //返回json 样式=》{a:'001',b:'002'}
-	console.log(arg);
-  res.send('respond with a post/remove'+JSON.stringify(arg));
+router.post('/post/removelist', function(req, res, next) {
+	console.log(req.body);
+	var filename = req.body.filename;
+
+	 fs.readFile(global.rootpath+'../'+'docs/static/data/Post/post.json','utf-8',function(err,data){
+  		var resObj = {};
+  		if(err){
+  			resObj.code = -10000;
+			resObj.data = "请重新请求一次";
+			res.send(resObj);
+			}else{
+			var content = JSON.parse(data);
+					console.log(content);
+			content.data.forEach((item,index) => {
+				console.log(item.title);
+				console.log(filename);
+				if(item.title == filename){
+					content.data.splice(index,1);
+				}
+			})
+			console.log(content.data.length);
+			fs.writeFile(global.rootpath+'../'+'docs/static/data/Post/post.json',JSON.stringify(content,null,4),function(err,data){
+				if(err){
+					resObj.code = -10000;
+					resObj.data = "请重新请求一次";
+					res.send(resObj);
+				}else{
+					resObj.code = 20000;
+					resObj.data = content.data;
+							//console.log(resObj);  		
+							res.send(resObj);	
+				}
+			})
+		
+			}
+  })
 });
 
-router.get('/post/add', function(req, res, next) {
+router.post('/post/addlist', function(req, res, next) {
 	var arg = URL.parse(req.url, true).query; //返回json 样式=》{a:'001',b:'002'}
 	console.log(arg);
   res.send('respond with a post/add'+JSON.stringify(arg));
 });
 
-router.get('/post/edit', function(req, res, next) {
+router.post('/post/editlist', function(req, res, next) {
  var arg = URL.parse(req.url, true).query; //返回json 样式=》{a:'001',b:'002'}
 	console.log(arg);
   res.send('respond with a post/edit'+JSON.stringify(arg));

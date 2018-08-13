@@ -114,7 +114,7 @@
 </template>
 
 <script>
-import { getList, getListLocal } from '@/api/table'
+import { getList, getListLocal, removeList} from '@/api/table'
 
 export default {
   data() {
@@ -220,6 +220,7 @@ export default {
     },
     // 显示新增界面
     handleAdd() {
+      console.log('add')
       this.addFormVisible = true
       this.addForm = {
         title: 'test',
@@ -229,6 +230,25 @@ export default {
         tag: 'a',
         des: 'fds'
       }
+    },
+    // 删除List
+    handleDel(index, row) {
+      console.log('delete')
+      this.$confirm('确认删除该记录吗', '提示', {
+        type: 'warning'
+      }).then(() => {
+        this.listLoading = true
+        console.log(row)
+        let para = { filename: row.title }
+        removeList(para).then((res) => {
+          this.listLoading = false
+          this.$message({
+            message: '删除成功',
+            type: 'success'
+          })
+          this.fetchData()
+        })
+      }).catch(() => {})
     },
     addSubmit() {
     }
