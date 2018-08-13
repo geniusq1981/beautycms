@@ -19,6 +19,18 @@ router.post('/login', function(req, res, next) {
   res.send(da);
 });
 
+router.post('/logout', function(req, res, next) {
+  let da = {
+  	"code":20000,
+	"data":{
+		"roles":["admin"],
+		"name":"admin",
+		"avatar":"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif"
+	}}
+  res.send(da);
+});
+
+
 router.get('/userinfo', function(req, res, next) {
   let da = {
   	"code":20000,
