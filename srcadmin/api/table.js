@@ -23,7 +23,7 @@ export const addList = (params) => {
   return request({
     url: '/post/addlist',
     method: 'post',
-    params
+    data: params
   })
 }
 
@@ -32,7 +32,7 @@ export const editList = (params) => {
   return request({
     url: '/post/editlist',
     method: 'post',
-    params
+    data: params
   })
 }
 

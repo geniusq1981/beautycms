@@ -28,7 +28,7 @@
          <nav class="nav-menu-item" style = "float:right">
             <i class="nav-menu-item">
               <router-link class="blog-button" to="/blog/">  
-              blogHome
+              博客主页
               </router-link>     
             </i>           
                 <i v-for="item in headnav" class="nav-menu-item">

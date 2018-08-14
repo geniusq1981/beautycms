@@ -101,19 +101,86 @@ router.post('/post/removelist', function(req, res, next) {
 			})
 		
 			}
-  })
+  });
 });
 
 router.post('/post/addlist', function(req, res, next) {
-	var arg = URL.parse(req.url, true).query; //返回json 样式=》{a:'001',b:'002'}
-	console.log(arg);
-  res.send('respond with a post/add'+JSON.stringify(arg));
+	console.log(req.body);
+	console.log(req.body.title);
+	fs.readFile(global.rootpath+'../'+'docs/static/data/Post/post.json','utf-8',function(err,data){
+		var resObj = {};
+		if(err){
+			resObj.code = -10000;
+			resObj.data = "请重新请求一次";
+			res.send(resObj);
+		}else{
+			var content = JSON.parse(data);
+			console.log(content);
+			if(JSON.stringify(content,null,4).match(req.body.title)){
+				resObj.code = -10000;
+				resObj.data = "已经包含同名的md文件";
+				res.send(resObj);
+			}else{
+				content.data.push(req.body);
+				content.data.sort(function(x,y){
+					if(Date.parse(x['date'])>Date.parse(y['date'])){
+						return -1;
+					}else if(Date.parse(x['date'])<Date.parse(y['date'])){
+						return 1;
+					}else{
+						return 0;
+					}
+				});
+				fs.writeFile(global.rootpath+'../'+'docs/static/data/Post/post.json',JSON.stringify(content,null,4),function(err){
+					if(err) throw err
+					fs.copyFile(global.rootpath+'../'+'docs/static/data/Post/post.json',global.rootpath+'../'+'static/data/Post/post.json', function(err){
+						if(err){
+							 console.log(err);
+							 return;
+						 }
+						 resObj.code = 20000;
+							resObj.data = "添加成功";
+							//console.log(resObj);  		
+							res.send(resObj);	
+					});		
+				});				
+			}
+		}
+	})
 });
 
 router.post('/post/editlist', function(req, res, next) {
- var arg = URL.parse(req.url, true).query; //返回json 样式=》{a:'001',b:'002'}
-	console.log(arg);
-  res.send('respond with a post/edit'+JSON.stringify(arg));
+	console.log(req.body);
+	console.log(req.body.title);
+	fs.readFile(global.rootpath+'../'+'docs/static/data/Post/post.json','utf-8',function(err,data){
+		var resObj = {};
+		if(err){
+			resObj.code = -10000;
+			resObj.data = "请重新请求一次";
+			res.send(resObj);
+		}else{
+			var content = JSON.parse(data);
+			console.log(content);
+			content.data.forEach((item,index) => {
+				if(item.title == req.body.title){
+					content.data[index]=req.body
+				}
+			});
+			fs.writeFile(global.rootpath+'../'+'docs/static/data/Post/post.json',JSON.stringify(content,null,4),function(){
+				if(err) throw err
+				fs.copyFile(global.rootpath+'../'+'docs/static/data/Post/post.json',global.rootpath+'../'+'static/data/Post/post.json', function(err){
+					if(err){
+						 console.log(err);
+						 return;
+					 }
+					 resObj.code = 20000;
+						resObj.data = "修改成功";
+						//console.log(resObj);  		
+						res.send(resObj);	
+				});				
+			});	
+		}
+	});
 });
 
 module.exports = router;

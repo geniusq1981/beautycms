@@ -32,7 +32,7 @@
       </el-table-column>
 	  <el-table-column label="关键词" width="110" align="center" sortable>
         <template slot-scope="scope">
-          {{scope.row.tag}}
+          {{scope.row.tags}}
         </template>
       </el-table-column>
       <!--<el-table-column class-name="status-col" label="摘要" width="300" align="center">
@@ -56,7 +56,7 @@
 	<!--编辑界面-->
     <div v-if="editFormVisible">sdfsf</div>
 		<el-dialog title="编辑" :visible.sync="editFormVisible" :close-on-click-modal="false">        
-			<el-form :model="editForm" label-width="80px" :rules="editFormRules" >
+			<el-form :model="editForm" label-width="80px" :rules="editFormRules" ref="editForm">
 				<el-form-item label="文件名" prop="title">
 					<el-input v-model="editForm.title" auto-complete="off"></el-input>
 				</el-form-item>
@@ -66,8 +66,8 @@
 				<el-form-item label="分类">
 					<el-input v-model="editForm.category" :min="0" :max="200"></el-input>
 				</el-form-item>
-				<el-form-item label="关键字">
-					<el-input v-model="editForm.tag" :min="0" :max="200"></el-input>
+				<el-form-item label="标签">
+					<el-input v-model="editForm.tags" :min="0" :max="200"></el-input>
 				</el-form-item>
 				<el-form-item label="发表时间">
 					<el-date-picker type="datetime" placeholder="选择日期" v-model="editForm.date"></el-date-picker>
@@ -94,8 +94,8 @@
 				<el-form-item label="分类">
 					<el-input v-model="addForm.category" :min="0" :max="200"></el-input>
 				</el-form-item>
-				<el-form-item label="关键字">
-					<el-input v-model="addForm.tag" :min="0" :max="200"></el-input>
+				<el-form-item label="标签">
+					<el-input v-model="addForm.tags" :min="0" :max="200"></el-input>
 				</el-form-item>
 				<el-form-item label="发表时间">
 					<el-date-picker type="datetime" placeholder="选择日期" v-model="addForm.date"></el-date-picker>
@@ -114,7 +114,7 @@
 </template>
 
 <script>
-import { getList, getListLocal, removeList} from '@/api/table'
+import { getList, getListLocal, removeList, addList, editList} from '@/api/table'
 
 export default {
   data() {
@@ -131,15 +131,15 @@ export default {
         slug: '',
         date: '',
         category: '',
-        tag: '',
+        tags: '',
         des: ''
       },
       editFormRules: {
         category: [
           { required: true, message: '请输入分类', trigger: 'blur' }
         ],
-        tag: [
-          { required: true, message: '请输入关键词', trigger: 'blur' }
+        tags: [
+          { required: true, message: '请输入标签', trigger: 'blur' }
         ]
       },
       list: null,
@@ -157,7 +157,7 @@ export default {
         slug: '',
         date: '',
         category: '',
-        tag: '',
+        tags: '',
         des: ''
       }
     }
@@ -213,7 +213,6 @@ export default {
     // 显示编辑界面
     handleEdit(index, row) {
       console.log(row)
-      console.log(this)
       this.editFormVisible = true
       this.editForm = Object.assign({}, row)
       console.log(this.editForm)
@@ -227,7 +226,7 @@ export default {
         slug: 'test',
         date: '123',
         category: 'sfd',
-        tag: 'a',
+        tags: 'a',
         des: 'fds'
       }
     },
@@ -251,6 +250,48 @@ export default {
       }).catch(() => {})
     },
     addSubmit() {
+      this.$refs.addForm.validate((valid) => {
+					if (valid) {
+						this.$confirm('确认提交吗？', '提示', {}).then(() => {
+							this.addLoading = true;
+							//NProgress.start();
+							let para = Object.assign({}, this.addForm);
+              addList(para).then((res) => {
+								this.addLoading = false;
+								//NProgress.done();
+								this.$message({
+									message: '提交成功',
+									type: 'success'
+								});
+								this.$refs['addForm'].resetFields();
+								this.addFormVisible = false;
+								this.fetchData();
+							});
+						});
+					}
+				});
+    },
+    editSubmit() {
+      this.$refs.editForm.validate((valid) => {
+					if (valid) {
+						this.$confirm('确认提交吗？', '提示', {}).then(() => {
+							this.addLoading = true;
+							//NProgress.start();
+							let para = Object.assign({}, this.editForm);
+							editList(para).then((res) => {
+								this.addLoading = false;
+								//NProgress.done();
+								this.$message({
+									message: '提交成功',
+									type: 'success'
+								});
+								this.$refs['editForm'].resetFields();
+								this.editFormVisible = false;
+								this.fetchData();
+							});
+						});
+					}
+				});
     }
   }
 }
