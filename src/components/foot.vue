@@ -65,7 +65,6 @@ export default {
   name: 'Foot',
   data() {
   return{
-
   }
   },
   methods: {
@@ -89,6 +88,5 @@ export default {
   }
 }
 </script>
-
 <style>
 </style>

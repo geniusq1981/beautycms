@@ -45,7 +45,7 @@ export default {
         page: 1,
         page_size: 10
       }).then((res) => {
-        console.log(res.data)
+        //console.log(res.data)
         this.posts = res.data.data
         this.processByYear(this.posts)
       })
@@ -54,12 +54,7 @@ export default {
       var that = this
       let p
       ins.forEach((post, index) => {
-        console.log(post)
-        console.log(index)
-        console.log(that)
-        console.log(post.date)
         let year = new Date(post.date).getFullYear()
-        console.log(year)
         if (this.postbyyear.hasOwnProperty(year)) {
           let data = this.postbyyear[year]
           data.push(post)

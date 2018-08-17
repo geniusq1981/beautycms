@@ -1,0 +1,10 @@
+{
+    "data": {
+        "title": "how-javascript-works-the-rendering-engine-and-tips-to-optimize-its-performance.md",
+        "date": "Wed, 30 May 2018 05:15:35 GMT",
+        "slug": "JavaScript 是如何工作的：渲染引擎和性能优化技巧",
+        "category": "",
+        "tag": "",
+        "des": "这是探索 JavaScript 及其构建组件专题系列的第 11 篇。在识别和描述核心元素的过程中，我们分享了在构建 SessionStack 时使用的一些经验法则。SessionStack 是一个需要鲁棒且高性能的 JavaScript 应用程序，它帮助用户实时查看和重现它们 Web 应用程序的缺陷。当构建 Web 应用程序时，你不只是编写独立运行的 JavaScript 代码片段。你编写的 Ja……"
+    }
+}

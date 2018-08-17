@@ -1,7 +1,6 @@
 <template>
   <div id="Pagination">
    <nav class="pagination" role="navigation">
-
 	<!-- 百度搜索 -->
         <router-link v-if="pg.pre_page" class="newer-posts pagination__newer btn btn-small btn-tertiary" :to="pg.pre_page_path">&larr; 最近</router-link>
         <span class="pagination__page-number">{{ pg.cur_page }} / {{ pg.total_page }}</span>
@@ -9,21 +8,18 @@
 	</nav>
   </div>
 </template>
-
 <script>
 import { butter } from '@/lib/buttercms'
-
 export default {
   name: 'Pagination',
   data() {
-    return {
-      
+    return {      
       }    
   },
   props:['pg'],
   methods: {
     getPaginator() {
-    	 console.log(this)
+    	 //console.log(this)
     },
     loabdcs () {
    /*document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'))
@@ -36,16 +32,16 @@ export default {
   },
   watch:{
     '$props':function(){
-    	console.log(this.pg)
+    	//console.log(this.pg)
     },
   	'pre_page':function(){
-  		console.log(this.pg.pre_page)
+  		//console.log(this.pg.pre_page)
   	},
   	'cur_page':function(){
-  		console.log(this.pg.cur_page)
+  		//console.log(this.pg.cur_page)
   	},
   	'next_page':function(){
-  		console.log(this.pg.next_page)
+  		//console.log(this.pg.next_page)
   	}
   },
   created() {

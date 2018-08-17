@@ -96,8 +96,6 @@ export default {
     fetchHeadline () {
       butter.content.retrieve(['homepage_headline'])
         .then((res) => {
-          console.log('Headline')
-          console.log('res')
         })
     },
     fetchPosts () {
@@ -106,13 +104,12 @@ export default {
         page_size: 10
       })
         .then((res) => {
-          console.log('Content from ButterCMS')
-          console.log(res)
+          this.$root.posts = res.data.data
         })
     }
   },
   created () {
-    this.fetchHeadline()
+    // this.fetchHeadline()
     this.fetchPosts()
   }
 }

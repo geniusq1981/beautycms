@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require("path");
 const marked = require('marked');
 const cheerio = require('cheerio'); //数据解析
+const eventproxy = require('eventproxy')
 const ora = require('ora')
 const rm = require('rimraf')
 const chalk = require('chalk')
@@ -15,6 +16,7 @@ const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
 
 const spinner = ora('transfer .md files to json...')
+spinner.start();
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -29,10 +31,14 @@ marked.setOptions({
 
 //获取当前目录绝对路径，这里resolve()不传入参数
 const filePath = path.resolve('','static/data/Post');
+const pagePath = path.resolve('','static/data/Page');
+const siteconfig = require('../src/config');
+console.log(siteconfig);
 
 //读取文件存储数组
 let fileArr = [];
 let origindata = {};
+let finaldata = {};
 
 //console.log(filePath);
 //读取文件目录
@@ -41,7 +47,7 @@ fs.readFile(path.join(filePath,'post.json'),'utf-8',function(err,data){
 //console.log('It\'s failed!');        
 }
   origindata = data;
-  console.log(JSON.stringify(origindata,null,4));
+  //console.log(JSON.stringify(origindata,null,4));
   readMDfiles();
 })
 
@@ -52,7 +58,7 @@ const readMDfiles = function () {
       return;
     }
     var count = files.length;
-    var results=[];
+    var results= JSON.stringify(origindata,null,4).length>0?JSON.parse(origindata)['data']:[];
     var len = files.length;
     files.forEach(function(filename,index){
       if(path.extname(filename)!='.md') {len--;return;}
@@ -84,6 +90,7 @@ const readMDfiles = function () {
         //console.log(content);
         fileinfo.des = content;
         //console.log(fileinfo);
+        console.log(results);
         results.push(fileinfo);
         len -= 1;
         //console.log(len);
@@ -99,14 +106,18 @@ const readMDfiles = function () {
           });
           //console.log(results);
           var obj = {"count":results.length,"data":results};
+          finaldata = results;
           fs.writeFile(path.join(filePath,'post.json'),JSON.stringify(obj,null,4),'utf8',function(err){
                 if(err) {
           //console.log('It\'s failed!');        
           }
           else{
-          //console.log('It\'s saved!');        
+          console.log('It\'s saved!');  
+           writeotherJson();      
               }
               });
+         
+
         };
       });
       fs.stat(path.join(filePath,filename),function(err,stats){
@@ -114,5 +125,38 @@ const readMDfiles = function () {
           fileinfo.date = stats.mtime.toUTCString();      
       });
     });
+    spinner.stop();
   });
+}
+
+const writeotherJson = function () {
+    const data = chunk(finaldata , siteconfig.pagesetting.homepagecount);
+    const len = data.length;
+    const ep = new eventproxy();
+    ep.after('writepage',function(){
+      console.log('finished');
+    });
+    for(let i=0;i<len;i++){
+      let name = 'page' + (i + 1) + '.json';
+      let da = {data:data[i]}; 
+      fs.writeFile(path.join(pagePath, name),JSON.stringify(da,null,4),function(err,data){
+        if(err){
+
+        }
+        ep.emit('writepage');
+        console.log(i);
+      })
+    }
+}
+
+function chunk(array,size) {
+  const len = array.length;
+  if(!len || len<size || size<1){return array;}
+  let index =0;
+  let resIndex =0;
+  let result = new Array(Math.ceil(len/size));
+  while( index < len){
+    result[resIndex++] = array.slice(index,(index += size));
+  }
+  return result;
 }

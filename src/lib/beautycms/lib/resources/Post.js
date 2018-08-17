@@ -9,7 +9,6 @@ Post.prototype = {
   list: function (options) {
     this._conn.get('Post/post.json',options)
       .then((res) => {
-          console.log(res)
           this.postlist = res.data
         }).catch((res) => {
           console.log(res)
@@ -20,9 +19,27 @@ Post.prototype = {
     return this._conn.get('Post/' + title, options)
   },
   getPostTitleByIndex: function (index,option) {
-    console.log("index")
-    console.log(this.postlist)
     return this.postlist.data[index]
+  },
+  getPostInfoByTitle: function (title) {
+    try{
+      let len = this.postlist.data.length
+      for(let i=0; i<len; i++){
+       if(this.postlist.data[i].title == title){
+          return this.postlist.data[i]
+       }  
+      } 
+    }catch(e){
+      this.list().then((res)=>{
+         let len = this.postlist.data.length
+      for(let i=0; i<len; i++){
+       if(this.postlist.data[i].title == title){
+          return this.postlist.data[i]
+       }  
+      } 
+      })
+    }   
+    
   },
   getContentByTitle: function (title, options) {
     return this._conn.get('Post/' + title, options)
@@ -33,7 +50,6 @@ Post.prototype = {
   search: function (query, options) {
     var options = options || {}
     options.query = query || ''
-
     return this._conn.get('search/', options)
   }
 }

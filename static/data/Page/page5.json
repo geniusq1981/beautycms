@@ -1,0 +1,10 @@
+{
+    "data": {
+        "title": "how-javascript-works-service-workers-their-life-cycle-and-use-cases.md",
+        "date": "Wed, 30 May 2018 05:15:35 GMT",
+        "slug": "JavaScript 是如何工作的：Service Worker 的生命周期与使用场景",
+        "category": "",
+        "tag": "",
+        "des": "这是专门探索 JavaScript 及其构建组件的系列的第八个。在识别和描述核心元素的过程中，我们也分享了一些我们在构建 SessionStack 时的最佳实践。SessionStack 是一个强大且性能卓越的 JavaScript 应用程序，可以向你实时显示用户在 Web 应用程序中遇到技术问题或用户体验问题时的具体情况。如果你没看过之前的章节，你可以在这里看到：你可能已经知道了渐进式 Web ……"
+    }
+}

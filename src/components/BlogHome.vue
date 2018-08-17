@@ -2,9 +2,9 @@
  <div>
  <div class="main-post-list">
   <ol class="post-list">
-    <li v-for="post in cur_posts">
+    <li v-for="(post,index) in cur_posts">
       <h2 class="post-list__post-title post-title">
-      <router-link :to="{path:'/blog/' + post.title, query:{index:post.index}}" class="button">
+      <router-link :to="{path:'/blog/' + post.title, query:{index:index}}" class="button">
           {{ post.slug }} >
         </router-link>
         </h2>
@@ -53,9 +53,10 @@ export default {
         pre_page_path:"",
         next_page_path:""
       },
+      pagesize:this.$root.pagesetting.homepagecount,
       page_title: 'Blog',
       cur_posts:[],
-      posts: [],
+      posts: this.$root.posts,
       categories: []
     }
   },
@@ -65,7 +66,7 @@ export default {
         page: 1,
         page_size: 10
       }).then((res) => {
-        console.log(res.data)
+        //console.log(res.data)
         this.posts = res.data.data
         this.getPogination()
       })
@@ -88,11 +89,10 @@ export default {
     },
     getPogination (){
         this.pagination.cur_page=this.$route.query.index||1
-        console.log(this.pagination.cur_page)
-        this.pagination.total_page =Math.ceil(this.posts.length/10)
+        this.pagination.total_page =Math.ceil(this.posts.length/this.pagesize)
         this.pagination.pre_page = this.pagination.cur_page-1 >0 ?this.pagination.cur_page-1:""
         this.pagination.next_page = this.pagination.cur_page+1 <=this.pagination.total_page? this.pagination.cur_page+1:""
-        this.cur_posts = this.posts.slice((this.pagination.cur_page-1)*10,10*this.pagination.cur_page)
+        this.cur_posts = this.posts.slice((this.pagination.cur_page-1)*this.pagesize,this.pagesize*this.pagination.cur_page)
     }
   },
   computed:{
@@ -104,8 +104,13 @@ export default {
   },
   created() {
   },
-   mounted() {
-    this.getPosts()
+  mounted() {
+    //console.log(this.posts)
+    if(!this.posts.length) {
+      this.getPosts()
+    }else {
+      this.getPogination()
+    }
     //this.getCategories()
     //this.getPostsByCategory()
   }

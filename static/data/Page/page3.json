@@ -1,0 +1,10 @@
+{
+    "data": {
+        "title": "how-javascript-works-inside-the-networking-layer-how-to-optimize-its-performance-and-security.md",
+        "date": "Wed, 30 May 2018 05:15:35 GMT",
+        "slug": "JavaScript 是如何工作的：深入网络层 + 如何优化性能和安全",
+        "category": "",
+        "tag": "",
+        "des": "这是探索 JavaScript 及其内建组件系列文章的第 12 篇。在认识和描述这些核心元素的过程中，我们也会分享我们在构建 SessionStack 时所遵循的一些经验规则。SessionStack 是一个轻量级 JavaScript 应用，它协助用户实时查看和复现他们的 Web 应用缺陷，因此其自身不仅需要足够健壮还要有不俗的性能表现。如果你错过了前面的文章，你可以在下面找到它们：正如我们在前……"
+    }
+}

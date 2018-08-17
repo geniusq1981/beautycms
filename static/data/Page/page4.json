@@ -1,0 +1,10 @@
+{
+    "data": {
+        "title": "how-javascript-works-the-mechanics-of-web-push-notifications.md",
+        "date": "Wed, 30 May 2018 05:15:35 GMT",
+        "slug": "JavaScript 是如何工作的：Web 推送通知的机制",
+        "category": "",
+        "tag": "",
+        "des": "这是专门研究 JavaScript 及其构建组件系列文章的第 9 章。在识别和描述核心元素的过程中，我们还分享了我们在构建一个轻量级 JavaScript 应用程序 SessionStack 时使用的一些经验规则，该应用程序需要健壮、高性能，可以帮助用户实时查看和重现它们的 Web 应用程序缺陷。如果你错过了前几章，你可以在这里找到它们：今天，我们来关注 Web 推送通知：我们将了解它们的构建组件……"
+    }
+}

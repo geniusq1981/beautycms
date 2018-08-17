@@ -47,7 +47,6 @@ export default {
         page: 1,
         page_size: 10
       }).then((res) => {
-        console.log(res.data)
         this.posts = res.data.data
         this.processByTag(this.posts)
       })
@@ -56,12 +55,7 @@ export default {
         var that = this
         let p
         ins.forEach((post,index)=>{
-            console.log(post)
-            console.log(index)
-            console.log(that)
-            console.log(post.date)
             let tag = post.tags
-            console.log(tag)
             if(this.postbytags.hasOwnProperty(tag)){
               let data =this.postbytags[tag]
               data.push(post)

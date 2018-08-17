@@ -29,7 +29,6 @@ function Beauty (apiToken, testMode, timeout) {
 Beauty.prototype = {
   _prepResources: function (requestMethods) {
     for (var name in resources) {
-      console.log(name)
       this[
         name[0].toLowerCase() + name.substring(1)
       ] = new resources[name](requestMethods)

@@ -1,0 +1,10 @@
+{
+    "data": {
+        "title": "how-javascript-works-under-the-hood-of-css-and-js-animations-how-to-optimize-their-performance.md",
+        "date": "Wed, 30 May 2018 05:15:35 GMT",
+        "slug": "JavaScript 是如何工作的：CSS 和 JS 动画背后的原理 + 如何优化性能",
+        "category": "",
+        "tag": "",
+        "des": "这是专门探索 JavaScript 及其构建组件系列的第 13 篇文章。在识别和描述核心元素的过程中，我们还分享了构建 SessionStack 时的一些经验法则，SessionStack 是一个足够强大且高性能的 JavaScript 应用程序，用来帮助用户实时查看和重现其 Web 应用程序的缺陷。如果你错过了前面的章节，你可以在这里找到它们：你也知道，动画在创造吸引人的 web app 中扮演……"
+    }
+}

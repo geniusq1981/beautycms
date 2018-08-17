@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import config from './config'
 import 'font-awesome/css/font-awesome.min.css'
 import '../static/css/main.css'  
 
@@ -15,70 +16,35 @@ new Vue({
     // declare message with an empty value
     message: 'hello',
     isHomePage: false,
-    site:{
-    	title:"司骞",
-    	subtitle:"个人站",
-    	description:"欢迎来到我的个人站",
-    	avatarTitle:"elang",
-    	avatarDesc:"Web Tech Lover",
-    	url:"",
-		social:{
-   			weibo: "3873821673",
-    		github: "geniusq1981",
-   			mail: "geniusq1981@hotmail.com"
-		},
-		cover_color:true
-    },
-    headnav:[
-    {title:'所有文章',url:'/archive',des:'archive'},
-    {title:'标签',url:'/tags',des:'tags'},
-    {title:'关于我',url:'/about',des:'about'}
-    ],
-    pagesetting:{
-      tagscount:30,
-      postcount:1
-    },
-    pagestatus:{
-      blogTotalPage:"",
-      tagsTotalPage:"",
-      currentblogpage:1,
-      currenttagspage:"",
-      previous_blogpage:{"name":"","path":""},
-      next_blogpage:{"name":"","path":""},
-      previous_tagpage:{"name":"","path":""},
-      next_tagpage:{"name":"","path":""}
-    }
+    site:config.site,
+    headnav:config.headnav,
+    pagesetting:config.pagesetting,
+    pagestatus:config.pagestatus,
+    posts:{}
   },
   method: {
   	updatedata () {
-  		console.log(this.router)
   		if(this.router){
-
   		}
   	}	
   },
   created () {
-  	console.log("create~")
-    console.log(this.$route.path)
-    this.isHomePage = this.$route.path == '/' ? false : true
+  	this.isHomePage = this.$route.path == '/' ? false : true
   },
   watch: {
   	//console.log("watch")
   	'$route' (to, from) {
-  	  console.log(to)
-  	  console.log(from)
+  	  //console.log(to)
+  	  //console.log(from)
       const toDepth = to.path.split('/').length
       const fromDepth = from.path.split('/').length
       this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-      console.log(this.$route)
-      console.log(this)
       this.isHomePage = this.$route.path == '/' ? false : true
   }
   },
   computed: {
   	//console.log("comopute")
   },
-
   components: { App },
   template: '<App/>'
 })
