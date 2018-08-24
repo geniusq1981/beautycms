@@ -1,10 +1,13 @@
 {
-    "data": {
-        "title": "how-javascript-works-inside-the-networking-layer-how-to-optimize-its-performance-and-security.md",
-        "date": "Wed, 30 May 2018 05:15:35 GMT",
-        "slug": "JavaScript 是如何工作的：深入网络层 + 如何优化性能和安全",
-        "category": "",
-        "tag": "",
-        "des": "这是探索 JavaScript 及其内建组件系列文章的第 12 篇。在认识和描述这些核心元素的过程中，我们也会分享我们在构建 SessionStack 时所遵循的一些经验规则。SessionStack 是一个轻量级 JavaScript 应用，它协助用户实时查看和复现他们的 Web 应用缺陷，因此其自身不仅需要足够健壮还要有不俗的性能表现。如果你错过了前面的文章，你可以在下面找到它们：正如我们在前……"
-    }
+    "data": [
+        {
+            "title": "architecting-single-page-applications.md",
+            "date": "Wed, 30 May 2018 05:15:35 GMT",
+            "slug": "关于 SPA，你需要掌握的 4 层",
+            "category": "前端",
+            "tag": "",
+            "des": "每个成功的项目都需要一个清晰的架构，这对于所有团队成员都是心照不宣的。试想一下，作为团队的新人。技术负责人给你介绍了在项目进程中提出的新应用程序的架构。然后告诉你需求：我们的应用程序将显示一系列文章。用户能够创建、删除和收藏文章。然后他说，去做吧！我选择 FaceBook 开源的构建工具 Create React App，使用 Flow 来进行类型检查。简单起见，先忽略样式。作为先决条件，让我们讨……",
+            "tags": "WebApp"
+        }
+    ]
 }

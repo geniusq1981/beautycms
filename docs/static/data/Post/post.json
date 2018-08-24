@@ -1,6 +1,24 @@
 {
-    "count": 26,
+    "count": 31,
     "data": [
+        {
+            "title": "articles-website-design-mistakes.md",
+            "date": "Fri, 24 Aug 2018 05:01:37 GMT",
+            "slug": "常见网页设计错误一览",
+            "category": "前端",
+            "tag": "",
+            "des": "简单的排版和设计诀窍，助力你编写出出色的网页1. 页面内容没有分割成逻辑区域如果页面信息被分组形成逻辑区域，用户会更容易看懂。请把内边距（Padding）设置成 120 像素到 180 像素，并且通过背景色把不同文本区域分开。不同组的相关信息间没有设置边距，而且这个设计需要用色块把页面划分出逻辑区域。所以，目前这些信息让人很难看懂，而且文字的区域分组也很不清晰。  边距足够大，而且不同区域通过背景……",
+            "tags": "Javascript"
+        },
+        {
+            "title": "7-javascript-eeg-mind-reading-libraries-for-2018.md",
+            "date": "Fri, 24 Aug 2018 05:01:37 GMT",
+            "slug": "2018 年七个通过脑电图分析实现“读心术”的 Javascript 库",
+            "category": "人工智能",
+            "tag": "",
+            "des": "“这个头戴装置是不是很酷？”脑电图是一种检测人脑中生物电活动的方法。它可以用来检测人体状态，比如癫痫或者脑瘤，以此来研究脑活动与认知方面的联系，或者用来学习人脑是如何对外部刺激产生反应，比如音乐或影像。尽管相比其他方法，此方法还不够成熟，但是在一些方面它的用途还是很大的 — 可以通过外部设备将大脑活动转化成行为（比如装备激光武器的机器人军队）。在脑电图信号的开发领域（由类似 openBCI 这样的……",
+            "tags": "脑电波"
+        },
         {
             "title": "how-to-scrape-websites-with-python-and-beautifulsoup.md",
             "date": "Fri, 17 Aug 2018 06:13:23 GMT",
@@ -11,13 +29,13 @@
             "tags": "Python"
         },
         {
-            "title": "lets-settle-this-part-two.md",
-            "date": "Wed, 08 Aug 2018 07:49:36 GMT",
-            "slug": "让我们一起解决“this”难题 — 第二部分",
+            "title": "optimizing-mp4-video-for-fast-streaming.md",
+            "date": "Fri, 17 Aug 2018 06:13:23 GMT",
+            "slug": "优化 MP4 视频以获得更快的流传输速度",
             "category": "前端",
             "tag": "",
-            "des": "嗨！欢迎来到让我们一起解决“this”难题的第二部分，我们试图揭开 JavaScript 中最难让人理解的一部分内容 - “this”关键字的神秘面纱。如果您还没有读过 第一部分，你需要先把它读一下。在第一部分中，我们通过 15 个示例介绍了默认绑定规则和隐式绑定规则。我们了解了函数内部的“this”如何随着函数调用方式的不同而发生改变。最后，我们也介绍了箭头函数以及它是如何进行词法绑定。我希望你……",
-            "tags": "Javascript"
+            "des": "随着 Flash 的衰落 和 移动设备的爆炸式增长，越来越多的内容正在以 HTML5 视频的方式发布。你可以通过 用 HTML5 视频片段代替 GIF 动画 的方式来优化你的网站速度。然而，视频文件本身就有大量可优化的地方，你可以借此提升它们的性能。其中最重要的一点是视频文件必须经过适当优化才能作为 HTML5 视频在线播放。如果没有这种优化，视频可能会延迟数百毫秒，而只是试图播放视频的访问者也可……",
+            "tags": "streaming"
         },
         {
             "title": "lets-settle-this-part-one.md",
@@ -29,6 +47,24 @@
             "tags": "Javascript"
         },
         {
+            "title": "lets-settle-this-part-two.md",
+            "date": "Wed, 08 Aug 2018 07:49:36 GMT",
+            "slug": "让我们一起解决“this”难题 — 第二部分",
+            "category": "前端",
+            "tag": "",
+            "des": "嗨！欢迎来到让我们一起解决“this”难题的第二部分，我们试图揭开 JavaScript 中最难让人理解的一部分内容 - “this”关键字的神秘面纱。如果您还没有读过 第一部分，你需要先把它读一下。在第一部分中，我们通过 15 个示例介绍了默认绑定规则和隐式绑定规则。我们了解了函数内部的“this”如何随着函数调用方式的不同而发生改变。最后，我们也介绍了箭头函数以及它是如何进行词法绑定。我希望你……",
+            "tags": "Javascript"
+        },
+        {
+            "title": "i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences.md",
+            "date": "Tue, 07 Aug 2018 01:52:34 GMT",
+            "slug": "用 React 和 Vue 创建了两个完全相同的应用后，发现了这些差异",
+            "category": "前端",
+            "tag": "",
+            "des": "在工作中使用 Vue 一段时间后，对它的工作原理有了相当深入的了解。然而，我很想知道篱笆另一边的草地是什么样 - React。我已经阅读了 React 文档，也观看了一些教程视频，虽然它们都很棒，但我真正想知道的是 React 与 Vue 到底有什么不同。这里的「不同」不是指它们是否具有虚拟 DOM 或者它们如何渲染页面。我希望有人能直接解释代码并告诉我会发生什么！我想找到一篇能解释这些差异的文章……",
+            "tags": "框架"
+        },
+        {
             "title": "how-to-rewrite-your-sql-queries-in-pandas-and-more.md",
             "date": "Mon, 30 Jul 2018 00:34:50 GMT",
             "slug": "如何使用 Pandas 重写你的 SQL 查询以及其他操作",
@@ -36,15 +72,6 @@
             "tag": "",
             "des": "15 年前，软件开发人员只需掌握很少的一些技能，他或她就有机会获得 95% 的工作机会。这些技能包括：当您需要快速浏览一些数据并得出初步结论时，SQL 是一种常用的工具，这些结论可能会产生一个分析报告或者是编写一个应用程序。这被称之为 探索性分析。现如今，数据会以各种各样的形式出现，不再仅仅是“关系型数据库”的同义词。您的数据可能会是 CSV 文件、纯文本、Parquet、HDF5，或者其他什么格……",
             "tags": "Pandas"
-        },
-        {
-            "title": "making-a-todo-app-with-flutter.md",
-            "date": "Tue, 24 Jul 2018 01:34:38 GMT",
-            "slug": "用 Flutter 写一个待办事项应用",
-            "category": "Mobile",
-            "tag": "",
-            "des": "Flutter 是 Google 对 React Native 的回应，它允许开发人员为 Android 和 iOS 创建原生应用。与用 JSX 编写的 React Native 不同，Flutter 应用程序是用 Google 的 Dart 语言编写的.Flutter 仍处于技术测试阶段，但它的工具非常稳定，并提供了流畅的开发体验。在这篇文章中，我将讲解如何使用 Flutter 创建一个简单的待……",
-            "tags": "Flutter"
         },
         {
             "title": "make-3d-flip-animation-in-flutter.md",
@@ -56,12 +83,21 @@
             "tags": "Flutter"
         },
         {
-            "title": "make-shimmer-effect-in-flutter.md",
+            "title": "a-simple-guide-to-understanding-javascript-es6-generators.md",
             "date": "Tue, 24 Jul 2018 01:34:38 GMT",
-            "slug": "在 Flutter 中实现微光闪烁效果",
+            "slug": "Javascript（ES6）Generator 入门",
+            "category": "前端",
+            "tag": "",
+            "des": "如果你在过去两到五年中一直在研究 JavaScript，那么肯定看过关于 Generator 和 Iterator 的文章。虽然 Generator 和 Iterator 本质上是相关的，但 Generator 似乎比 Iterator 更令人难以理解。Iterator 由 Iterable 对象（如 map，数组和字符串等）实现，我们能够使用 next() 迭代它们。Iterator 在 Gen……",
+            "tags": "ES6"
+        },
+        {
+            "title": "making-a-todo-app-with-flutter.md",
+            "date": "Tue, 24 Jul 2018 01:34:38 GMT",
+            "slug": "用 Flutter 写一个待办事项应用",
             "category": "Mobile",
             "tag": "",
-            "des": "通过挑战 UI 制作来学习 Flutter我是一个狂热的移动开发者，Android 平台和 iOS 平台开发都有涉及。过去我不相信任何跨平台的开发框架（Ionic，Xamarin，ReactNative），但现在我要讲一下我遇到跨平台开发框架 Flutter 之后的故事。作为一名原生应用开发人员，我深深感到 UI 定制开发是多么痛苦，即使是使用跨平台开发框架去进行开发，这种痛苦也不能得到缓解，有时……",
+            "des": "Flutter 是 Google 对 React Native 的回应，它允许开发人员为 Android 和 iOS 创建原生应用。与用 JSX 编写的 React Native 不同，Flutter 应用程序是用 Google 的 Dart 语言编写的.Flutter 仍处于技术测试阶段，但它的工具非常稳定，并提供了流畅的开发体验。在这篇文章中，我将讲解如何使用 Flutter 创建一个简单的待……",
             "tags": "Flutter"
         },
         {
@@ -74,22 +110,13 @@
             "tags": "Node.js"
         },
         {
-            "title": "a-simple-guide-to-understanding-javascript-es6-generators.md",
+            "title": "make-shimmer-effect-in-flutter.md",
             "date": "Tue, 24 Jul 2018 01:34:38 GMT",
-            "slug": "Javascript（ES6）Generator 入门",
-            "category": "前端",
+            "slug": "在 Flutter 中实现微光闪烁效果",
+            "category": "Mobile",
             "tag": "",
-            "des": "如果你在过去两到五年中一直在研究 JavaScript，那么肯定看过关于 Generator 和 Iterator 的文章。虽然 Generator 和 Iterator 本质上是相关的，但 Generator 似乎比 Iterator 更令人难以理解。Iterator 由 Iterable 对象（如 map，数组和字符串等）实现，我们能够使用 next() 迭代它们。Iterator 在 Gen……",
-            "tags": "ES6"
-        },
-        {
-            "title": "energy-sector-now-on-blockchain-based-cryptocurrency.md",
-            "date": "Tue, 10 Jul 2018 02:08:28 GMT",
-            "slug": "能源行业聚焦基于区块链技术的加密货币",
-            "category": "区块链",
-            "tag": "",
-            "des": "Envion 是一家在瑞士注册的区块链公司，专注于提供挖矿基础设施以及区块链挖掘技术。该公司为了实现全球可再生能源的价值最大化，提供了很好的解决方案。加密货币的重商主义（商业本位）属性受到了全球的追捧，因此 Envion 试图彻底改变数字货币的挖掘方式。目前像挖掘比特币这样的加密货币需要非常精密的硬件来处理高级运算。为了扩大能源产业链的价值，Envion 建立了一套覆盖全球的智能系统，该系统由卫星……",
-            "tags": "Envion"
+            "des": "通过挑战 UI 制作来学习 Flutter我是一个狂热的移动开发者，Android 平台和 iOS 平台开发都有涉及。过去我不相信任何跨平台的开发框架（Ionic，Xamarin，ReactNative），但现在我要讲一下我遇到跨平台开发框架 Flutter 之后的故事。作为一名原生应用开发人员，我深深感到 UI 定制开发是多么痛苦，即使是使用跨平台开发框架去进行开发，这种痛苦也不能得到缓解，有时……",
+            "tags": "Flutter"
         },
         {
             "title": "envion-a-name-of-mining-in-block-chain-to-support-renewable-energy.md",
@@ -101,31 +128,13 @@
             "tags": "Envion"
         },
         {
-            "title": "introduction-to-accessibility-for-android-apps-and-games.md",
-            "date": "Mon, 02 Jul 2018 00:43:26 GMT",
-            "slug": "安卓应用和游戏的无障碍开发介绍",
-            "category": "Mobile",
+            "title": "energy-sector-now-on-blockchain-based-cryptocurrency.md",
+            "date": "Tue, 10 Jul 2018 02:08:28 GMT",
+            "slug": "能源行业聚焦基于区块链技术的加密货币",
+            "category": "区块链",
             "tag": "",
-            "des": "虽然我们的目标是设计和开发迎合广大受众群体的应用，但我们不应该忘记，使用安卓和 Google Play 的用户中还有相当一部分是残疾人。据 世界卫生组织 估计，世界人口的 15％，大约 10 亿人，有不同程度的听力，视觉，认知以及运动功能方面的残疾。这些会影响到他们与科技之间进行互动的方式，让每个人在 Google Play 和 Android 上使用他们最喜欢的应用时感到舒适对我们来说很重要。我……",
-            "tags": "Android"
-        },
-        {
-            "title": "maybe-you-dont-need-rust-to-speed-up-your-js-1.md",
-            "date": "Mon, 02 Jul 2018 00:43:26 GMT",
-            "slug": "或许你并不需要 Rust 和 WASM 来提升 JS 的执行效率 — 第一部分",
-            "category": "前端",
-            "tag": "",
-            "des": "几个星期前，我在 Twitter 上看到一篇名为 “Oxidizing Source Maps with Rust and WebAssembly” 的推文，其内容主要是讨论用 Rust 编写的 WebAssembly 替换 source-map 库中纯 JavaScript 编写的核心代码所带来的性能优势。这篇文章使我感兴趣的原因，并不是因为我擅长 Rust 或 WASM，而是因为我总是对语言特……",
-            "tags": "Javascript"
-        },
-        {
-            "title": "maybe-you-dont-need-rust-to-speed-up-your-js-2.md",
-            "date": "Mon, 02 Jul 2018 00:43:26 GMT",
-            "slug": "或许你并不需要 Rust 和 WASM 来提升 JS 的执行效率 — 第二部分",
-            "category": "前端",
-            "tag": "",
-            "des": "以下内容为本系列文章的第二部分，如果你还没看第一部分，请移步或许你并不需要 Rust 和 WASM 来提升 JS 的执行效率 — 第一部分。我尝试过三种不同的方法对 Base64 VLQ 段进行解码。第一个是 decodeCached，它与 source-map 使用的默认实现方式完全相同 — 我已经在上面列出了：第二个是 decodeNoCaching。它实际上就是没有缓存的 decodeCac……",
-            "tags": "Javascript"
+            "des": "Envion 是一家在瑞士注册的区块链公司，专注于提供挖矿基础设施以及区块链挖掘技术。该公司为了实现全球可再生能源的价值最大化，提供了很好的解决方案。加密货币的重商主义（商业本位）属性受到了全球的追捧，因此 Envion 试图彻底改变数字货币的挖掘方式。目前像挖掘比特币这样的加密货币需要非常精密的硬件来处理高级运算。为了扩大能源产业链的价值，Envion 建立了一套覆盖全球的智能系统，该系统由卫星……",
+            "tags": "Envion"
         },
         {
             "title": "vuejs-or-react-which-you-would-chose-and-why.md",
@@ -137,6 +146,33 @@
             "tags": "框架"
         },
         {
+            "title": "maybe-you-dont-need-rust-to-speed-up-your-js-1.md",
+            "date": "Mon, 02 Jul 2018 00:43:26 GMT",
+            "slug": "或许你并不需要 Rust 和 WASM 来提升 JS 的执行效率 — 第一部分",
+            "category": "前端",
+            "tag": "",
+            "des": "几个星期前，我在 Twitter 上看到一篇名为 “Oxidizing Source Maps with Rust and WebAssembly” 的推文，其内容主要是讨论用 Rust 编写的 WebAssembly 替换 source-map 库中纯 JavaScript 编写的核心代码所带来的性能优势。这篇文章使我感兴趣的原因，并不是因为我擅长 Rust 或 WASM，而是因为我总是对语言特……",
+            "tags": "Javascript"
+        },
+        {
+            "title": "introduction-to-accessibility-for-android-apps-and-games.md",
+            "date": "Mon, 02 Jul 2018 00:43:26 GMT",
+            "slug": "安卓应用和游戏的无障碍开发介绍",
+            "category": "Mobile",
+            "tag": "",
+            "des": "虽然我们的目标是设计和开发迎合广大受众群体的应用，但我们不应该忘记，使用安卓和 Google Play 的用户中还有相当一部分是残疾人。据 世界卫生组织 估计，世界人口的 15％，大约 10 亿人，有不同程度的听力，视觉，认知以及运动功能方面的残疾。这些会影响到他们与科技之间进行互动的方式，让每个人在 Google Play 和 Android 上使用他们最喜欢的应用时感到舒适对我们来说很重要。我……",
+            "tags": "Android"
+        },
+        {
+            "title": "maybe-you-dont-need-rust-to-speed-up-your-js-2.md",
+            "date": "Mon, 02 Jul 2018 00:43:26 GMT",
+            "slug": "或许你并不需要 Rust 和 WASM 来提升 JS 的执行效率 — 第二部分",
+            "category": "前端",
+            "tag": "",
+            "des": "以下内容为本系列文章的第二部分，如果你还没看第一部分，请移步或许你并不需要 Rust 和 WASM 来提升 JS 的执行效率 — 第一部分。我尝试过三种不同的方法对 Base64 VLQ 段进行解码。第一个是 decodeCached，它与 source-map 使用的默认实现方式完全相同 — 我已经在上面列出了：第二个是 decodeNoCaching。它实际上就是没有缓存的 decodeCac……",
+            "tags": "Javascript"
+        },
+        {
             "title": "a-real-world-comparison-of-front-end-frameworks-with-benchmarks-2018-update.md",
             "date": "Fri, 15 Jun 2018 06:13:16 GMT",
             "slug": "前端开发框架的实战对比（2018 年更新）",
@@ -144,15 +180,6 @@
             "tag": "",
             "des": "本文是是对 2017 年 12 月发表的 前端开发框架的实战对比 一文的更新。在对比中，我们将展示不同框架之间去实现几乎相同的 实战示例应用 有怎样的差别。实战示例应用 为我们提供了：✅ Angular 没有用于生产环境。之前实战应用仓库列出的示例应用使用的是一个开发版本，感谢 Jonathan Faircloth，它现在已经是生产版本！✅ Vue 没有包含在实战应用仓库，因此未包括在对比中。正如……",
             "tags": "框架"
-        },
-        {
-            "title": "vuex-perfect-interface-frontend-backend.md",
-            "date": "Thu, 07 Jun 2018 06:46:50 GMT",
-            "slug": "为什么 VueX 是前端与 API 之间的完美接口",
-            "category": "前端",
-            "tag": "",
-            "des": "前端 Web 开发复杂性的增加促进了前后端专业化和前后端分离。这种专业化和复杂性的增加有许多好处 —— 网络用户体验的质量呈指数级增长，同时，更多的人将通过多种设备连接彼此，这是史无前例的。但是，它也带来了一些挑战。前端和 API 之间接口的摩擦、挑战和复杂性是一个常见的问题。理想状态下，后端和前端将通过紧密的通信和谐共处，后端提供的数据将完全匹配前端所需的数据。实际上，应用程序的这两个部分通常由……",
-            "tags": "Vue"
         },
         {
             "title": "a-simple-guide-to-es6-promises.md",
@@ -164,31 +191,13 @@
             "tags": "ES6"
         },
         {
-            "title": "architecting-single-page-applications.md",
-            "date": "Wed, 30 May 2018 05:15:35 GMT",
-            "slug": "关于 SPA，你需要掌握的 4 层",
+            "title": "vuex-perfect-interface-frontend-backend.md",
+            "date": "Thu, 07 Jun 2018 06:46:50 GMT",
+            "slug": "为什么 VueX 是前端与 API 之间的完美接口",
             "category": "前端",
             "tag": "",
-            "des": "每个成功的项目都需要一个清晰的架构，这对于所有团队成员都是心照不宣的。试想一下，作为团队的新人。技术负责人给你介绍了在项目进程中提出的新应用程序的架构。然后告诉你需求：我们的应用程序将显示一系列文章。用户能够创建、删除和收藏文章。然后他说，去做吧！我选择 FaceBook 开源的构建工具 Create React App，使用 Flow 来进行类型检查。简单起见，先忽略样式。作为先决条件，让我们讨……",
-            "tags": "WebApp"
-        },
-        {
-            "title": "how-javascript-works-service-workers-their-life-cycle-and-use-cases.md",
-            "date": "Wed, 30 May 2018 05:15:35 GMT",
-            "slug": "JavaScript 是如何工作的：Service Worker 的生命周期与使用场景",
-            "category": "前端",
-            "tag": "",
-            "des": "这是专门探索 JavaScript 及其构建组件的系列的第八个。在识别和描述核心元素的过程中，我们也分享了一些我们在构建 SessionStack 时的最佳实践。SessionStack 是一个强大且性能卓越的 JavaScript 应用程序，可以向你实时显示用户在 Web 应用程序中遇到技术问题或用户体验问题时的具体情况。如果你没看过之前的章节，你可以在这里看到：你可能已经知道了渐进式 Web ……",
-            "tags": "Javascript"
-        },
-        {
-            "title": "how-javascript-works-the-mechanics-of-web-push-notifications.md",
-            "date": "Wed, 30 May 2018 05:15:35 GMT",
-            "slug": "JavaScript 是如何工作的：Web 推送通知的机制",
-            "category": "前端",
-            "tag": "",
-            "des": "这是专门研究 JavaScript 及其构建组件系列文章的第 9 章。在识别和描述核心元素的过程中，我们还分享了我们在构建一个轻量级 JavaScript 应用程序 SessionStack 时使用的一些经验规则，该应用程序需要健壮、高性能，可以帮助用户实时查看和重现它们的 Web 应用程序缺陷。如果你错过了前几章，你可以在这里找到它们：今天，我们来关注 Web 推送通知：我们将了解它们的构建组件……",
-            "tags": "Javascript"
+            "des": "前端 Web 开发复杂性的增加促进了前后端专业化和前后端分离。这种专业化和复杂性的增加有许多好处 —— 网络用户体验的质量呈指数级增长，同时，更多的人将通过多种设备连接彼此，这是史无前例的。但是，它也带来了一些挑战。前端和 API 之间接口的摩擦、挑战和复杂性是一个常见的问题。理想状态下，后端和前端将通过紧密的通信和谐共处，后端提供的数据将完全匹配前端所需的数据。实际上，应用程序的这两个部分通常由……",
+            "tags": "Vue"
         },
         {
             "title": "how-javascript-works-inside-the-networking-layer-how-to-optimize-its-performance-and-security.md",
@@ -234,6 +243,33 @@
             "tag": "",
             "des": "这是探索 JavaScript 及其构建组件专题系列的第 11 篇。在识别和描述核心元素的过程中，我们分享了在构建 SessionStack 时使用的一些经验法则。SessionStack 是一个需要鲁棒且高性能的 JavaScript 应用程序，它帮助用户实时查看和重现它们 Web 应用程序的缺陷。当构建 Web 应用程序时，你不只是编写独立运行的 JavaScript 代码片段。你编写的 Ja……",
             "tags": "Javascript"
+        },
+        {
+            "title": "how-javascript-works-the-mechanics-of-web-push-notifications.md",
+            "date": "Wed, 30 May 2018 05:15:35 GMT",
+            "slug": "JavaScript 是如何工作的：Web 推送通知的机制",
+            "category": "前端",
+            "tag": "",
+            "des": "这是专门研究 JavaScript 及其构建组件系列文章的第 9 章。在识别和描述核心元素的过程中，我们还分享了我们在构建一个轻量级 JavaScript 应用程序 SessionStack 时使用的一些经验规则，该应用程序需要健壮、高性能，可以帮助用户实时查看和重现它们的 Web 应用程序缺陷。如果你错过了前几章，你可以在这里找到它们：今天，我们来关注 Web 推送通知：我们将了解它们的构建组件……",
+            "tags": "Javascript"
+        },
+        {
+            "title": "how-javascript-works-service-workers-their-life-cycle-and-use-cases.md",
+            "date": "Wed, 30 May 2018 05:15:35 GMT",
+            "slug": "JavaScript 是如何工作的：Service Worker 的生命周期与使用场景",
+            "category": "前端",
+            "tag": "",
+            "des": "这是专门探索 JavaScript 及其构建组件的系列的第八个。在识别和描述核心元素的过程中，我们也分享了一些我们在构建 SessionStack 时的最佳实践。SessionStack 是一个强大且性能卓越的 JavaScript 应用程序，可以向你实时显示用户在 Web 应用程序中遇到技术问题或用户体验问题时的具体情况。如果你没看过之前的章节，你可以在这里看到：你可能已经知道了渐进式 Web ……",
+            "tags": "Javascript"
+        },
+        {
+            "title": "architecting-single-page-applications.md",
+            "date": "Wed, 30 May 2018 05:15:35 GMT",
+            "slug": "关于 SPA，你需要掌握的 4 层",
+            "category": "前端",
+            "tag": "",
+            "des": "每个成功的项目都需要一个清晰的架构，这对于所有团队成员都是心照不宣的。试想一下，作为团队的新人。技术负责人给你介绍了在项目进程中提出的新应用程序的架构。然后告诉你需求：我们的应用程序将显示一系列文章。用户能够创建、删除和收藏文章。然后他说，去做吧！我选择 FaceBook 开源的构建工具 Create React App，使用 Flow 来进行类型检查。简单起见，先忽略样式。作为先决条件，让我们讨……",
+            "tags": "WebApp"
         }
     ]
 }
