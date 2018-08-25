@@ -26,6 +26,14 @@
         有问题和想法，可以在 github 上提给我。</p>
         <p>如果喜欢，请点赞，你的 Star 是作者更新的动力，谢谢~</p>
         <hr>
+        <hr>
+        <h3> 示例 </h3>
+        <ul id="samplesite">
+        <li><a href="http://gallery.geniusq.top" :class="{jump:true,gallery:true}"></a></li>
+        <li><a href="https://translatetoolkit.github.io/MarkdownEditor/" :class="{jump:true,markdowneditor:true}"></a></li>
+        <li><a href="https://tizentvwebapp.github.io/2048-Game/" :class="{jump:true,tzfe:true}"></a></li>
+        <li><a href="http://132.232.57.112/youshuTV" :class="{jump:true,youshu:true}"></a></li>
+        </ul>
         </div>
     </div>
   </div>
@@ -51,6 +59,34 @@ export default {
   }
 }
 </script>
-
 <style>
+#samplesite {
+  display:block;
+  overflow:hidden;
+}
+#samplesite li{
+  list-style: none;  
+  padding:10px 10px 10px 10px;
+  float:left;
+}
+.jump{
+  display:block;
+  width:250px;
+  height:150px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border:2px solid;
+}
+.gallery{
+  background-image:url(/static/images/gallery.jpg);
+}
+.markdowneditor{
+  background-image:url(/static/images/MarkdownEditor.jpg);
+}
+.tzfe{
+  background-image:url(/static/images/2048.jpg);
+}
+.youshu{
+  background-image:url(/static/images/youshu.jpg);
+}
 </style>
