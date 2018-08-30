@@ -81,21 +81,33 @@
 				<el-button type="primary" @click.native="editSubmit" :loading="editLoading">提交</el-button>
 			</div>
 		</el-dialog>
-
         <!--新增界面-->
 		<el-dialog title="新增" :visible.sync="addFormVisible" :close-on-click-modal="false">
 			<el-form :model="addForm" label-width="80px" :rules="addFormRules" ref="addForm">
 				<el-form-item label="文件名" prop="title">
 					<el-input v-model="addForm.title" auto-complete="off"></el-input>
+          <el-upload
+            class="upload-demo"
+            ref="upload"
+            action="http://127.0.0.1:9000/api/post/uploadFile"
+            :on-preview="handlePreview"
+            :on-remove="handleRemove"
+            :before-upload="beforeAvatarUpload"
+            :on-success="uploadsuccess"
+            :file-list="fileList"
+            :auto-upload="false">
+            <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+            <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+          </el-upload>
 				</el-form-item>
                 <el-form-item label="题目" prop="slug">
 					<el-input v-model="addForm.slug" auto-complete="off"></el-input>
 				</el-form-item>
 				<el-form-item label="分类">
-					<el-input v-model="addForm.category" :min="0" :max="200"></el-input>
+					<el-input v-model="addForm.category"></el-input>
 				</el-form-item>
 				<el-form-item label="标签">
-					<el-input v-model="addForm.tags" :min="0" :max="200"></el-input>
+					<el-input v-model="addForm.tags"></el-input>
 				</el-form-item>
 				<el-form-item label="发表时间">
 					<el-date-picker type="datetime" placeholder="选择日期" v-model="addForm.date"></el-date-picker>
@@ -103,7 +115,6 @@
 				<el-form-item label="摘要">
 					<el-input type="textarea" v-model="addForm.des"></el-input>
 				</el-form-item>
-			</el-form>
 			</el-form>
 			<div slot="footer" class="dialog-footer">
 				<el-button @click.native="addFormVisible = false">取消</el-button>
@@ -122,6 +133,7 @@ export default {
       filters: {
         name: ''
       },
+      fileList: [],
       editFormVisible: false, // 编辑界面是否显示
       editLoading: false,
       // 编辑界面数据
@@ -292,7 +304,44 @@ export default {
 						});
 					}
 				});
-    }
+    },
+     submitUpload() {
+        this.$refs.upload.submit();
+      },
+      handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePreview(file) {
+        console.log(file);
+      },
+      beforeAvatarUpload(file){
+        console.log(file)
+        var fileName = new Array();
+        fileName = file.name.split(".");
+        const extension = fileName[fileName.length-1] === 'md';
+        console.log(extension);   
+        if (!extension) {
+                    this.$message({
+                        message: '上传文件只能是md格式!',
+                        type: 'warning'
+                    });
+//                    console.log('上传模板只能是xls、xlsx格式!')
+                }
+      },
+      uploadsuccess(fb){
+        console.log(fb);
+        if(fb.code==20000){
+          this.addForm = {
+            title: fb.data.title,
+            slug: fb.data.slug,
+            date: fb.data.date,
+            category: fb.data.category,
+            tags: fb.data.tag,
+            des: fb.data.des
+         }
+        }
+        
+      }
   }
 }
 </script>

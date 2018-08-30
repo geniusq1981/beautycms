@@ -2,6 +2,10 @@ var express = require('express');
 var fs = require('fs')
 var URL = require('url'); //解析操作url
 var router = express.Router();
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart();
+var fileprocess = require('./fileprocess');
+console.log(fileprocess);
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -183,4 +187,29 @@ router.post('/post/editlist', function(req, res, next) {
 	});
 });
 
+
+router.post('/post/uploadFile', multipartMiddleware, function(req, res, next) {
+	console.log(req);
+	console.log(req.files);
+	var path = req.files.file.path;
+	var source = fs.createReadStream(path);
+	var dest = fs.createWriteStream(global.rootpath+'../'+'static/data/Post/'+req.files.file.name);
+	source.pipe(dest);
+	source.on('end',function(){
+		console.log('success');
+		fs.unlinkSync(path);
+		fileprocess.processMDfile(global.rootpath+'../'+'static/data/Post/'+req.files.file.name,function(result){
+			//console.log(result);
+			res.send({code:20000,data:result});
+		});
+	});
+	source.on('error',function(err){
+		console.log(err);
+		res.send(err);
+	});
+	
+	
+	
+	
+});
 module.exports = router;

@@ -45,6 +45,7 @@
     "chalk": "^2.0.1",
     "cheerio": "^1.0.0-rc.2",
     "chromedriver": "^2.27.2",
+    "connect-multiparty": "^2.1.1",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.1",
     "cross-spawn": "^5.0.1",

@@ -1,6 +1,21 @@
 'use strict';
 
 var fs = require('fs')
+var path = require("path");
+var marked = require('marked');
+var cheerio = require('cheerio'); //数据解析
+var eventproxy = require('eventproxy');
+
+marked.setOptions({
+    renderer: new marked.Renderer(),
+    gfm: true,
+    tables: false,
+    breaks: false,
+    pedantic: false,
+    sanitize: true,
+    smartLists: true,
+    smartypants: false
+  });
 
 var fileprocess =function(){
 
@@ -42,6 +57,44 @@ fileprocess.removelist = function(destfile,mdfile){
       
           }
 });
+}
+
+fileprocess.processMDfile=function(filepath,callback){
+    var filename = filepath.split('/');
+    filename = filename[filename.length-1];
+    if(path.extname(filename)!='.md') {return;}
+    let fileinfo = {"title":filename,"date":"","slug":"","category":"","tag":"","des":""}
+    fs.readFile(filepath,'utf-8', function(err,data){
+      if(err) throw err;
+      //console.log(data);
+      //console.log(marked(data));
+      var $ = cheerio.load(marked(data),{decodeEntities: false});
+      function foundFirstH(){
+        var head = "";
+        var re ="";
+        for(var i=1;i<7;i++){
+          head = 'h'+i.toString();
+          re = $(head)
+          if(re.length) {
+            break;
+          }
+        } 
+        return re[0].children[0].data;
+      };
+      var headline = foundFirstH();
+     //var headline = $('h1')[0].children[0].data;
+      //console.log(headline);
+      fileinfo.slug = headline;
+      var content =$('p').text().slice(0,200)+"……";
+      //console.log(content);
+      fileinfo.des = content;
+      //console.log(fileinfo);
+      callback(fileinfo); 
+    });
+    fs.stat(filepath,function(err,stats){
+        if(err) throw err;
+        fileinfo.date = stats.mtime.toUTCString();      
+    });
 }
 
 module.exports = fileprocess;
