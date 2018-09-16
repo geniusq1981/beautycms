@@ -5,11 +5,9 @@
 > * 译者：[geniusq1981](https://github.com/geniusq1981)
 > * 校对者：[Park-ma](https://github.com/Park-ma)、[huangyuanzhen](https://github.com/huangyuanzhen)
 
-# 2018 年七个通过脑电图分析实现“读心术”的 Javascript 库
-
 ## 用于探索人脑信号以实现读心的 JavaScript 库。
 
-![](https://cdn-images-1.medium.com/max/1600/1*TOFxZJnsy9DPK3a3ZES05w.jpeg)
+![](https://user-gold-cdn.xitu.io/2018/8/24/165699ec3b371a29?w=640&h=427&f=jpeg&s=42756)
 
 “这个头戴装置是不是很酷？”
 
@@ -23,7 +21,7 @@
 
 ### 1. Muse-js
 
-![](https://cdn-images-1.medium.com/max/1600/1*gN7_qSoxnCv7y2rW8WpO2g.gif)
+![](https://user-gold-cdn.xitu.io/2018/8/24/165699ec6666a3a1?w=800&h=457&f=gif&s=10208663)
 
 从这篇文章可以找到一个示例：[https://medium.com/@urish/reactive-brain-waves-af07864bb7d4](https://medium.com/@urish/reactive-brain-waves-af07864bb7d4)
 
@@ -37,7 +35,7 @@ Muse - js 可以让 web 开发者通过浏览器、RxJs 和 Angular 这样的工
 
 ### 2. Wits
 
-![](https://cdn-images-1.medium.com/max/1600/1*AlCW5rzbus1jqJBDSiIkRw.gif)
+![](https://user-gold-cdn.xitu.io/2018/8/24/165699ec214e4501?w=1064&h=633&f=gif&s=2672957)
 
 wits 是 Brain-Bits 项目的一部分, 它是一个 Node.js 库，可以读取来自 [Emotiv](https://www.emotiv.com/) EPOC 脑电头盔的脑电图信号。它由原生 C 模块实现（基于 [openyou/emokit-c](https://github.com/openyou/emokit-c.git)），以 128Hz 采样率的速度处理 14 路电极原始的脑电图数据流，并且给终端用户提供了丰富的接口。这里有个例子，欢迎试用一下。
 
@@ -51,7 +49,7 @@ mind.read(console.log)
 
 ### 3. Brain-monitor
 
-![](https://cdn-images-1.medium.com/max/1600/1*hDVSjp4vSjrmqt0wwvKU1Q.gif)
+![](https://user-gold-cdn.xitu.io/2018/8/24/165699ec5a140fdd?w=1306&h=532&f=gif&s=5893447)
 
 Brain-monitor 实际上是一个用 Javascript 编写的可以实时显示脑电图信号的终端应用。它配合 Emotiv EPOC 脑电头盔一起工作，以 128Hz 的采样频率对 14 个电极的原生脑电信号进行分析，并能处理一些额外的信息，比如头的方向，甚至是头盔的电量。对于喜欢使用命令行的开发者，这是个不错的选择。
 
@@ -59,7 +57,7 @@ Brain-monitor 实际上是一个用 Javascript 编写的可以实时显示脑电
 
 ### 4. Brain-bits
 
-![](https://cdn-images-1.medium.com/max/1600/1*6pYMJ2_4fV8iMP2_sPwTAg.gif)
+![](https://user-gold-cdn.xitu.io/2018/8/24/165699ec406d233b?w=600&h=600&f=gif&s=725240)
 
 由 wits 和 brain-monitor 的开发者创建，Brain-bits 是为 Emotiv 脑电头盔所做的一套 P300 在线拼写系统。这个项目基于 [Electron](https://electronjs.org) 应用，后端运行 Node，而前端使用 Vue.js，利用 Node.js 的原生模块以及 [brain.js](https://github.com/BrainJS/brain.js) 来处理神经网络，并使用 [d3](https://d3js.org) 来绘制脑电图。你可以在开发者在 2018 Amsterdam JS 论坛上的 [这次演讲](https://www.youtube.com/watch?v=_4nrh6mTt4E) 里面看到一个现场演示，并能了解更多内容。
 
@@ -67,7 +65,7 @@ Brain-monitor 实际上是一个用 Javascript 编写的可以实时显示脑电
 
 ### 5. EEG-101
 
-![](https://cdn-images-1.medium.com/max/1600/1*iPMqXQS3FK1lOa3sD6oolw.png)
+![](https://user-gold-cdn.xitu.io/2018/8/24/165699ec3d5152aa?w=1484&h=607&f=png&s=124702)
 
 EEG-101 是一个使用 Muse 和 React Native 来教授脑电图和 BCI 基础知识的交互式神经学的 [教程应用](https://play.google.com/store/apps/details?id=com.eeg_project&hl=en)。内容包括信号从哪里来，设备如何工作以及如何处理数据。使用 React Native 开发了 Android 应用，项目包含了一个用于脑电图数据的通用二进制分类器，它使用 LibMuse Java API 获取来自 Muse 头盔的数据流。这是一种很好的采集和播放脑电信号的方式。
 
@@ -75,7 +73,7 @@ EEG-101 是一个使用 Muse 和 React Native 来教授脑电图和 BCI 基础�
 
 ### 6. EEG pipes
 
-![](https://cdn-images-1.medium.com/max/1600/1*1SPDOMNKy-3ntUgiDnpeDA.png)
+![](https://user-gold-cdn.xitu.io/2018/8/24/165699eccfbea51b?w=660&h=352&f=png&s=49724)
 
 这个项目提供在 Node 和浏览器环境中处理脑电图数据的可管道化的 RxJS 操作符，包括的功能比如 FFT、功率谱密度（PSD）和功率带宽、缓冲和 Epoching、IIR 滤波器等。注意需要一个关于脑电图的 Observable，可以使用 RxJS 的 `fromEvent` 将回调事件压入 Observable 流中。试用一下。
 

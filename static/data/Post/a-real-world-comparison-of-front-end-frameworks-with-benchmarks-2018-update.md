@@ -5,10 +5,6 @@
 > * 译者：[geniusq1981](https://github.com/geniusq1981)
 > * 校对者：[Hopsken ](https://github.com/Hopsken)、[zephyrJS](https://github.com/zephyrJS)
 
-# 前端开发框架的实战对比（2018 年更新）
-
-![](https://cdn-images-1.medium.com/max/1000/1*0aM-p4OCCxRMXroYn0qPVA.png)
-
 本文是是对 2017 年 12 月发表的 [前端开发框架的实战对比](https://medium.freecodecamp.org/a-real-world-comparison-of-front-end-frameworks-with-benchmarks-e1cb62fd526c) 一文的更新。
 
 在对比中，我们将展示不同框架之间去实现几乎相同的 [实战示例应用](https://github.com/gothinkster/realworld) 有怎样的差别。
@@ -29,7 +25,7 @@
 
 和 2017 年 12 月的文章一样，我们包含了实战应用仓库中列出的所有实现方式。不管它有没有大量的拥趸，唯一标准就是它出现在 [实战应用仓库](https://github.com/gothinkster/realworld) 页面上。
 
-![](https://cdn-images-1.medium.com/max/1000/1*IJ4a_VfY1Qn3yJaIy7pjVw.png)
+![](https://user-gold-cdn.xitu.io/2018/6/13/163f77e88c3fbda4?w=1000&h=610&f=png&s=131593)
 
 前往 [https://github.com/gothinkster/realworld](https://github.com/gothinkster/realworld) （2018 年 4 月）
 
@@ -45,7 +41,7 @@
 
 绘制速度越快，应用的使用体验就越好。Lighthouse 也测试 [First interactive](https://developers.google.com/web/tools/lighthouse/audits/first-interactive) ，但对于大多数应用来说，这几乎是相同的，而它还处于测试阶段。
 
-![](https://cdn-images-1.medium.com/max/1000/1*El9cBVFHxRG36XD8KNjA_g.png)
+![](https://user-gold-cdn.xitu.io/2018/6/13/163f77e88d2302c9?w=1000&h=697&f=png&s=45865)
 
 首次有效绘制（毫秒）——越低越好
 
@@ -59,7 +55,7 @@
 
 这取决于你的框架以及你添加的依赖库的大小，还有你的编译工具的好坏也有一定影响。
 
-![](https://cdn-images-1.medium.com/max/1000/1*xHuwMctzoT6aA3BE4zXA5w.png)
+![](https://user-gold-cdn.xitu.io/2018/6/13/163f77e88d13ebe1?w=1000&h=700&f=png&s=40574)
 
 传输大小（KB）——越低越好
 
@@ -71,7 +67,7 @@
 
 >如果调试是删除软件错误的过程，那么编程就是引入错误的过程 — Edsger Dijkstra
 
-![](https://cdn-images-1.medium.com/max/1000/1*YTfk05JBtqNBIoK_4u2H3g.png)
+![](https://user-gold-cdn.xitu.io/2018/6/13/163f77e88b632dc6?w=1000&h=701&f=png&s=46126)
 
 # 代码行数——越少越好
 

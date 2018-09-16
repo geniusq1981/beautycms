@@ -5,8 +5,6 @@
 > * 译者：[geniusq1981](https://github.com/geniusq1981)
 > * 校对者：[D-kylin ](https://github.com/D-kylin)、[leviding](https://github.com/leviding)
 
-# 或许你并不需要 Rust 和 WASM 来提升 JS 的执行效率 — 第二部分
-
 **以下内容为本系列文章的第二部分，如果你还没看第一部分，请移步[或许你并不需要 Rust 和 WASM 来提升 JS 的执行效率 — 第一部分](https://github.com/xitu/gold-miner/blob/master/TODO1/maybe-you-dont-need-rust-to-speed-up-your-js-1.md)。**
 
 我尝试过三种不同的方法对 Base64 VLQ 段进行解码。
@@ -142,7 +140,7 @@ function decodeNoCachingNoStringPreEncoded(arr) {
 
 下面是我在 Chrome Dev`66.0.3343.3`（V8`6.6.189`）和 Firefox Nightly`60.0a1` 中运行我的基准测试得到的结果(2018-02-11)：
 
-![不同的解码](https://mrale.ph/images/2018-02-03/different-decodes.png)
+![不同的解码](https://user-gold-cdn.xitu.io/2018/6/29/16448ecaeff0ec8a?w=640&h=480&f=png&s=46966)
 
 注意几点：
 
@@ -159,7 +157,7 @@ function decodeNoCachingNoStringPreEncoded(arr) {
 
 这些问题的评论当中，有些引用了 2018 年 1 月末以后的提交版本，这表明正在积极地进行 `charCodeAt` 的性能改善。出于好奇，我决定在 Chrome Beta 版本中重新运行我的基准测试，并与 Chrome Dev 版本进行比较。
 
-![Different Decodes](https://mrale.ph/images/2018-02-03/different-decodes-v8s.png)
+![Different Decodes](https://user-gold-cdn.xitu.io/2018/6/29/16448ecaf0b04620?w=640&h=480&f=png&s=52207)
 
 事实上，通过比较可以发现 V8 团队的所有提交都是卓有成效的：`charCodeAt` 的性能从“6.5.254.21”版本到“6.6.189”版本得到了很大提高。 通过对比“无缓存”和“使用数组”的代码行，我们可以看到，在老版本的 V8 中，charCodeAt 的表现差很多，所以只是将字符串转换为“Uint8Array”来加快访问速度就可以带来效果。然而，在新版本的 V8 中，只是在解析内部进行这种转换的话，并不能带来任何效果。
 
@@ -190,7 +188,7 @@ foo(str, 0);
 
 基于这些发现，我们可以从 `source-map` 解析代码中删除被解析分段的缓存，再测试影响效果。
 
-![解析和排序时间](https://mrale.ph/images/2018-02-03/parse-sort-1.png)
+![解析和排序时间](https://user-gold-cdn.xitu.io/2018/6/29/16448ecaf13c4070?w=640&h=480&f=png&s=50430)
 
 就像我们的基准测试预测的那样，缓存对整体性能是不利的：删除它可以大大提升解析时间。
 
@@ -275,7 +273,7 @@ var endSortOriginal = Date.now();
 
 “compareByOriginalPositionsNoSource”比较器几乎与“compareByOriginalPositions”比较器完全相同，只是它不再比较“source”组件 - 根据我们构造 `originalMappings [i]` 数组的方式，这样可以保证是公平的。
 
-![解析和排序时间](https://mrale.ph/images/2018-02-03/parse-sort-2.png)
+![解析和排序时间](https://user-gold-cdn.xitu.io/2018/6/29/16448ecaf00ada72?w=640&h=480&f=png&s=48180)
 
 这个算法改进可同时提升 V8 和 SpiderMonkey 上的排序速度，还可以改进 V8 上的解析速度。
 
@@ -400,13 +398,13 @@ function sortGenerated(array, start) {
 
 这产生以下结果：
 
-![解析和排序时间](https://mrale.ph/images/2018-02-03/parse-sort-3.png)
+![解析和排序时间](https://user-gold-cdn.xitu.io/2018/6/29/16448ecaf18f765c?w=640&h=480&f=png&s=52555)
 
 排序时间急剧下降，而解析时间稍微增加 — 这是因为代码将 `generatedMappings` 作为解析循环的一部分进行排序，使得我们的分解略显无意义。让我们对比下改善总时间（解析和排序一起）。
 
 #### 改善总时间
 
-![解析和排序时间](https://mrale.ph/images/2018-02-03/parse-sort-3-total.png)
+![解析和排序时间](https://user-gold-cdn.xitu.io/2018/6/29/16448ecb0efc87fe?w=640&h=480&f=png&s=44328)
 
 现在很明显，我们大大提高了整体映射解析性能。
 
@@ -554,9 +552,9 @@ exports.compareByOriginalPositionsNoSource =
 
 重新运行基准测试，证明缓解 GC 压力产生了很好的改善效果。
 
-![重新分配后](https://mrale.ph/images/2018-02-03/parse-sort-4.png)
+![重新分配后](https://user-gold-cdn.xitu.io/2018/6/29/16448ecc625b046d?w=640&h=480&f=png&s=50166)
  
-![重新分配后](https://mrale.ph/images/2018-02-03/parse-sort-4-total.png)
+![重新分配后](https://user-gold-cdn.xitu.io/2018/6/29/16448ecc5e03faa8?w=640&h=480&f=png&s=44651)
 
 有趣的是，在 SpiderMonkey 上，这种方法对于解析和排序都有改善效果，这对我来说真是一个惊喜。
 
@@ -564,7 +562,7 @@ exports.compareByOriginalPositionsNoSource =
 
 当我使用这段代码时，我还发现了 SpiderMonkey 中令人困惑的性能断崖现象：当我将预置内存缓冲区的大小从 4 MB 增加到 64 MB 来衡量重新分配的消耗时，基准测试显示当进行第 7 次迭代后性能突然下降了。
 
-![重新分配后](https://mrale.ph/images/2018-02-03/parse-sort-5-total.png)
+![重新分配后](https://user-gold-cdn.xitu.io/2018/6/29/16448ecc6292695c?w=640&h=480&f=png&s=36717)
 
 这看起来像某种多态性，但我不能立即就搞明白如何改变数组的大小可以导致这样的多态行为。
 
@@ -574,7 +572,7 @@ exports.compareByOriginalPositionsNoSource =
 
 最后，如果我们使用 `Uint8Array` 代替字符串来解析，我们又可以得到小的改善效果。
 
-![重新分配后](https://mrale.ph/images/2018-02-03/parse-sort-6-total.png)
+![重新分配后](https://user-gold-cdn.xitu.io/2018/6/29/16448ecc5f94e72a?w=640&h=480&f=png&s=39389)
 
 需要我们重写 `source-map`，直接使用类型数组解析映射而不再使用 JavaScript 的字符串方法 `JSON.decode` 进行解析。我没有做过这样的改写，但我想应该没有什么问题。
 
@@ -603,9 +601,9 @@ $ sm bench-shell-bindings.js
 [Stats samples: 31, total: 25247 ms, mean: 814.4193548387096 ms, stddev: 5.591064299397745 ms]
 ```
 
-![重新分配后](https://mrale.ph/images/2018-02-03/parse-sort-final.png)
+![重新分配后](https://user-gold-cdn.xitu.io/2018/6/29/16448ecc6419c6eb?w=640&h=480&f=png&s=45673)
 
-![重新分配后](https://mrale.ph/images/2018-02-03/parse-sort-final-total.png)
+![重新分配后](https://user-gold-cdn.xitu.io/2018/6/29/16448ecc679baaa1?w=640&h=480&f=png&s=35351)
 
 这是 4 倍的性能提升！
 
@@ -618,7 +616,7 @@ $ sm bench-shell-bindings.js
 
 最后比较 1 月 19 日的 V8 和 2 月 19 日的 V8 分别对应包含和不包含[减少不可信代码的修改](https://github.com/v8/v8/wiki/Untrusted-code-mitigations)。
 
-![重新分配后](https://mrale.ph/images/2018-02-03/parse-sort-v8-vs-v8-total.png)
+![重新分配后](https://user-gold-cdn.xitu.io/2018/6/29/16448ecd5e482060?w=640&h=480&f=png&s=38091)
 
 ### 比较 Oxidized `source-map` 版本
 
@@ -628,9 +626,9 @@ $ sm bench-shell-bindings.js
 
 这里是仅仅是解析的对比结果（其中还包括对 `generatedMappings` 进行排序），然后对所有 `generatedMappings` 进行解析和迭代。
 
-![只有解析时间](https://mrale.ph/images/2018-02-03/parse-only-rust-wasm-vs-js.png)
+![只有解析时间](https://user-gold-cdn.xitu.io/2018/6/29/16448ecd3a3f6182?w=640&h=480&f=png&s=34880)
 
-![解析和迭代次数](https://mrale.ph/images/2018-02-03/parse-iterate-rust-wasm-vs-js.png)
+![解析和迭代次数](https://user-gold-cdn.xitu.io/2018/6/29/16448ecd769f3b9b?w=640&h=480&f=png&s=36082)
 
 **请注意，这个对比有点误导，因为 Rust 版本并未像我的 JS 版本那样优化 `generatedMappings` 的排序。**
 
@@ -640,7 +638,7 @@ $ sm bench-shell-bindings.js
 
 `source-map` 的作者 Nick Fitzgerald 把本文描述的算法[已更新](http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html)到 Rust+WASM 的版本。以下是解析和迭代的对比性能图表：
 
-![解析和迭代次数](https://mrale.ph/images/2018-02-03/parse-iterate-rust-wasm-vs-js-2.png)
+![解析和迭代次数](https://user-gold-cdn.xitu.io/2018/6/29/16448ecd77060f23?w=640&h=480&f=png&s=48210)
 
 正如你可以看到 WASM+Rust 版本在 SpiderMonkey 上的速度现在增加了大约 15％，而在 V8 上的速度也大致相同。
 

@@ -5,9 +5,7 @@
 > * 译者：[geniusq1981](https://github.com/geniusq1981)
 > * 校对者：[Park-ma](https://github.com/Park-ma)、[coolseaman](https://github.com/coolseaman)
 
-# 如何使用 Python 和 BeautifulSoup 爬取网站内容
-
-![](https://cdn-images-1.medium.com/max/1600/1*BrUAg3-OqIHkoTz_CRIzTA.png)
+![](https://user-gold-cdn.xitu.io/2018/8/16/16540f5c2cd0db22?w=844&h=668&f=png&s=959127)
 
 互联网上的信息量比任何一个人究其一生所能掌握的信息量都要大的多。所以我们要做的不是在互联网上逐个访问信息，而是需要有一种灵活的方式来收集，整理和分析这些信息。
 
@@ -17,7 +15,7 @@
 
 如果你是一个狂热的投资者，每天获知收盘价可能会是一件很痛苦的事，特别是当你需要的信息分散在多个网页的时候。我们将通过构建一个网络爬虫来自动从网上检索股票指数，从而简化数据的爬取。
 
-![](https://cdn-images-1.medium.com/max/1600/1*gsn6N_tUoMb8XOWBpqQrNw.jpeg)
+![](https://user-gold-cdn.xitu.io/2018/8/16/16540f5c2d155385?w=1600&h=849&f=jpeg&s=441300)
 
 ### 入门
 
@@ -82,17 +80,17 @@ pip install BeautifulSoup4
 
 因为有些人会关注股市，那么我们就从这个页面上获取指数名称（标准普尔 500 指数）和它的价格。首先，从鼠标右键菜单中点击 Inspect 选项来查看页面。
 
-![](https://cdn-images-1.medium.com/max/1600/1*KOJCuAYQyMIC8QdQyXERyw.png)
+![](https://user-gold-cdn.xitu.io/2018/8/16/16540f5c2b199574?w=369&h=206&f=png&s=23393)
 
 试着把鼠标指针悬浮在价格上，你应该可以看到出现了一个蓝色方形区域包裹住了价格。如果你点击，在浏览器的控制台上，这段 HTML 内容就被选定了。
 
-![](https://cdn-images-1.medium.com/max/1600/1*T0t6G2tawfTtKHR4yY_iVQ.png)
+![](https://user-gold-cdn.xitu.io/2018/8/16/16540f5c25cddaf6?w=1163&h=414&f=png&s=106602)
 
 通过结果，你可以看到价格被好几层 HTML 标签包裹着，`<div class="basic-quote">` → `<div class="price-container up">` → `<div class="price">`。
 
 类似的，如果你悬浮并且点击“标准普尔 500 指数”，它被包裹在 `<div class="basic-quote">` 和 `<h1 class="name">` 里面。
 
-![](https://cdn-images-1.medium.com/max/1600/1*ga5bmPtLDdWUTvL-pNxBgg.png)
+![](https://user-gold-cdn.xitu.io/2018/8/16/16540f5c2e5f589c?w=306&h=111&f=png&s=13720)
 
 现在我们通过 `class` 标签的帮助，知道了所需数据的确切位置。
 
@@ -155,7 +153,7 @@ print price
 
 当你运行这个程序，你可以看到标准普尔 500 指数的当前价格被打印了出来。
 
-![](https://cdn-images-1.medium.com/max/1600/1*8sCE0XTu0Q0iHi2-QLpgXg.png)
+![](https://user-gold-cdn.xitu.io/2018/8/16/16540f5c2cb7cf46?w=118&h=45&f=png&s=976)
 
 ### 输出到 Excel CSV
 
@@ -179,7 +177,7 @@ with open(‘index.csv’, ‘a’) as csv_file:
 
 如果你现在运行你的程序，你应该可以导出一个index.csv文件，然后你可以用 Excel 打开它，在里面可以看到一行数据。
 
-![](https://cdn-images-1.medium.com/max/1600/1*d-27jLzy2GrxmvlLRJ4yVw.png)
+![](https://user-gold-cdn.xitu.io/2018/8/16/16540f5d54642be3?w=237&h=31&f=png&s=4186)
 
 如果你每天运行这个程序，你就可以很简单地获取标准普尔 500 指数，而不用重复地通过网页查找。
 
@@ -241,7 +239,7 @@ BeautifulSoup 是一个简单且强大的小规模的网页爬虫工具。但是
 
 ### 采用 DRY 方法
 
-![](https://cdn-images-1.medium.com/max/1600/1*gD4GwO1zV33IIgoeYLVrzA.jpeg)
+![](https://user-gold-cdn.xitu.io/2018/8/16/16540f5d5bb768a2?w=1600&h=1066&f=jpeg&s=185718)
 
 DRY（Don't Repeat Yourself）代表“不要重复自己的工作”，尝试把你每日工作都自动化，像 [这个人](http://www.businessinsider.com/programmer-automates-his-job-2015-11) 做的那样。可以考虑一些有趣的项目，可能是跟踪你的 Facebook 好友的活跃时间（需要获得他们的同意），或者是获取论坛的演讲列表并尝试进行自然语言处理（这是当前人工智能的一个热门话题）！
 
